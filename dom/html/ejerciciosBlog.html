@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/ejerciciosBlog.css" />
+    <script>
+      function cambiarColor(color) {
+        const t = document.getElementById("titulo");
+        const r = document.getElementById("titulo2");
+        t.style.color = color;
+        r.style.color = color;
+      }
+    </script>
+  </head>
+
+  <body>
+    <section>
+      <h3>Ejercicio 1</h3>
+      <p>
+        Cambiar de color un titulo <br />
+        Ejemplo:
+      </p>
+      <fieldset style="width: 7rem">
+        <h3 id="titulo">Titulo</h3>
+        <button onclick="cambiarColor('blue')">Cambiar color</button>
+      </fieldset>
+    </section>
+
+    <section>
+      <h3>Ejercicio 2</h3>
+      <p>Cambiar de varios colores un titulo</p>
+      <fieldset style="width: 7rem">
+        <h3 id="titulo2">Titulo 2</h3>
+        <button onclick="cambiarColor('red')">Rojo</button>
+        <button>Amarillo</button>
+      </fieldset>
+    </section>
+  </body>
+</html>
