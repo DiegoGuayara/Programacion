@@ -553,7 +553,7 @@ if (impuesto === "Baja") {
 function productos() {
   let prod = prompt("Va a ingresar un producto?");
 
-  if (prod === "Si") {
+  if (prod === "Si" || prod === "si") {
     let nomprod = prompt("Ingrese el nombre del producto");
     let valprod = parseFloat(prompt("Ingrese el valor del producto"));
 
@@ -565,7 +565,7 @@ function productos() {
       if (canprod > 0) {
         let prgdesc = prompt("El producto tiene descuento?");
 
-        if (prgdesc === "Si") {
+        if (prgdesc === "Si" || prgdesc === "si") {
           let descprod = parseInt(prompt("Ingrese el descuento"));
           if (descprod > 0) {
             console.log(
@@ -575,7 +575,7 @@ function productos() {
             );
             total += valprod * canprod - valprod * canprod * (descprod / 100);
           }
-        } else if (prgdesc == "No") {
+        } else if (prgdesc == "No" || prgdesc == "no") {
           console.log(
             `Producto = ${nomprod}, valor = ${valprod}, cantidad = ${canprod}, valor total = ${
               valprod * canprod
@@ -586,7 +586,7 @@ function productos() {
       }
     }
     productos();
-  } else if (prod === "No") {
+  } else if (prod === "No" || prod === "no") {
     console.log(`Precio total = ${total}`);
   } else {
     productos();

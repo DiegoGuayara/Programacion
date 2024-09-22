@@ -172,9 +172,7 @@ rl.question("Ingrese la hora de entrada. ", (x) => {
 */
 
 //Piedra, papel o tijeras
-/*const rl = require("readline").createInterface(process.stdin, process.stdout);
-
-let opc = ["Piedra", "Papel", "Tijera"];
+/*let opc = ["Piedra", "Papel", "Tijera"];
 let v = 0;
 let p = 0;
 let e = 0;
