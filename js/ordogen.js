@@ -666,96 +666,67 @@ console.log(dif);
 // let arr = [2, 4, 6, 8, 1, 3, 5, 7, 9, 2, 'hola'];
 // console.log(arr.indexOf('hola'));
 
-// let horas = 0;
-// const rl = require("readline").createInterface(process.stdin, process.stdout);
-// rl.question("Ingrese la hora de entrada. ", (x) => {
-//   rl.question("Ingrese la hora de salida. ", (y) => {
-//     parseFloat(x);
-//     parseFloat(y);
-//     horas += y - x;
-//     let sal = horas * (horas * 5000);
+// let saldo = 0;
+// let efectivo = 0;
 
-//     rl.question("Quiere el resumen semanal o mensual? ", (z) => {
-//       if (z === "Semanal") {
-//         console.log(
-//           `Usted en la semana trabajó ${horas * 7} horas y en la semana ganó ${
-//             sal * 7
-//           } pesos`
-//         );
-//         rl.close();
-//       } else if (z === "Mensual") {
-//         console.log(
-//           `Usted en el mes trabajó ${horas * 30} horas y en la semana ganó ${
-//             sal * 30
-//           } pesos`
-//         );
-//         rl.close();
+// function cajper() {
+//   let prg = parseInt(
+//     prompt(`Ingrese un numero.
+//     1. Consultar saldo.
+//     2. Consignar
+//     3. Retirar
+//     4. Pagar
+//     5. Finalizar
+//     `)
+//   );
+
+//   if (prg == 1) {
+//     alert(
+//       `Tu saldo actual es ${saldo} pesos, y en efectivo tiene ${efectivo} pesos`
+//     );
+//     cajper();
+//   } else if (prg === 2) {
+//     prg = parseFloat(prompt("Ingrese cuanto va a consignar"));
+//     if (prg > 0) {
+//       saldo += prg;
+//       alert(`Consignacion: ${prg} pesos
+// Saldo: ${saldo} pesos.`);
+//     }
+//     cajper();
+//   } else if (prg === 3) {
+//     prg = parseFloat(prompt("Cuanto va a retirar"));
+//     if (saldo - prg >= 0) {
+//       saldo -= prg;
+//       efectivo += prg;
+//       alert(`Retiro: ${prg} pesos
+// Saldo: ${saldo} pesos
+// Efectivo: ${efectivo} pesos`);
+//     } else {
+//       alert("No tiene los fondos suficientes para hacer este retiro");
+//     }
+//     cajper();
+//   } else if (prg === 4) {
+//     prg = parseInt(
+//       prompt(`Ingrese que va a pagar:
+// 1. Servicios
+// 2. Deudas`)
+//     );
+//     if (prg === 1 || prg === 2) {
+//       prg = parseFloat(prompt("Ingrese cuanto va a pagar"));
+//       if (efectivo - prg >= 0) {
+//         efectivo -= prg;
+//         alert(`Precio a pagar: ${prg} pesos
+// Efectivo disponible: ${efectivo} pesos`);
+//       } else {
+//         alert("No tiene los fondos suficientes para realizar este pago");
 //       }
-//     });
-//   });
-// });
+//     }
+//     cajper();
+//   } else if (prg === 5) {
+//     alert("Hasta luego");
+//   } else {
+//     cajper();
+//   }
+// }
 
-let saldo = 0;
-let efectivo = 0;
-
-function cajper() {
-  let prg = parseInt(
-    prompt(`Ingrese un numero.
-    1. Consultar saldo.
-    2. Consignar
-    3. Retirar
-    4. Pagar
-    5. Finalizar
-    `)
-  );
-
-  if (prg == 1) {
-    alert(
-      `Tu saldo actual es ${saldo} pesos, y en efectivo tiene ${efectivo} pesos`
-    );
-    cajper();
-  } else if (prg === 2) {
-    prg = parseFloat(prompt("Ingrese cuanto va a consignar"));
-    if (prg > 0) {
-      saldo += prg;
-      alert(`Consignacion: ${prg} pesos
-Saldo: ${saldo} pesos.`);
-    }
-    cajper();
-  } else if (prg === 3) {
-    prg = parseFloat(prompt("Cuanto va a retirar"));
-    if (saldo - prg >= 0) {
-      saldo -= prg;
-      efectivo += prg;
-      alert(`Retiro: ${prg} pesos
-Saldo: ${saldo} pesos
-Efectivo: ${efectivo} pesos`);
-    } else {
-      alert("No tiene los fondos suficientes para hacer este retiro");
-    }
-    cajper();
-  } else if (prg === 4) {
-    prg = parseInt(
-      prompt(`Ingrese que va a pagar:
-1. Servicios
-2. Deudas`)
-    );
-    if (prg === 1 || prg === 2) {
-      prg = parseFloat(prompt("Ingrese cuanto va a pagar"));
-      if (efectivo - prg >= 0) {
-        efectivo -= prg;
-        alert(`Precio a pagar: ${prg} pesos
-Efectivo disponible: ${efectivo} pesos`);
-      } else {
-        alert("No tiene los fondos suficientes para realizar este pago");
-      }
-    }
-    cajper();
-  } else if (prg === 5) {
-    alert("Hasta luego");
-  } else {
-    cajper();
-  }
-}
-
-cajper();
+// cajper();

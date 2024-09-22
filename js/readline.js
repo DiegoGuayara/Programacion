@@ -140,3 +140,87 @@ let rl = require("readline").createInterface(process.stdin, process.stdout);
   u();
 });
 */
+
+//Horas trabajadas
+/*let horas = 0;
+rl.question("Ingrese la hora de entrada. ", (x) => {
+  rl.question("Ingrese la hora de salida. ", (y) => {
+    parseFloat(x);
+    parseFloat(y);
+    horas += y - x;
+    let sal = horas * (horas * 5000);
+
+    rl.question("Quiere el resumen semanal o mensual? ", (z) => {
+      if (z === "Semanal") {
+        console.log(
+          `Usted en la semana trabajó ${horas * 7} horas y en la semana ganó ${
+            sal * 7
+          } pesos`
+        );
+        rl.close();
+      } else if (z === "Mensual") {
+        console.log(
+          `Usted en el mes trabajó ${horas * 30} horas y en la semana ganó ${
+            sal * 30
+          } pesos`
+        );
+        rl.close();
+      }
+    });
+  });
+});
+*/
+
+//Piedra, papel o tijeras
+/*const rl = require("readline").createInterface(process.stdin, process.stdout);
+
+let opc = ["Piedra", "Papel", "Tijera"];
+let v = 0;
+let p = 0;
+let e = 0;
+
+function oppc() {
+  let pc = opc[Math.floor(Math.random() * opc.length)];
+  return pc;
+}
+
+function part() {
+  rl.question("Elija piedra, papel o tijera. ", (x) => {
+    const opC = oppc();
+    console.log(`pc eligio ${opC}`);
+
+    if (x === "Piedra" || x === "Papel" || x === "Tijera") {
+      if (
+        (x === "Piedra" && opC === opc[2]) ||
+        (x === "Papel" && opC === opc[0]) ||
+        (x === "Tijera" && opC === opc[1])
+      ) {
+        console.log("Ganó un punto");
+        v++;
+      } else if (
+        (x === "Piedra" && opC === opc[1]) ||
+        (x === "Papel" && opC === opc[2]) ||
+        (x === "Tijera" && opC === opc[0])
+      ) {
+        console.log("Perdio un punto");
+        p++;
+      } else {
+        console.log("Empate");
+        e++;
+      }
+    } else {
+      part();
+    }
+
+    if (v < 3 && p < 3) {
+      part();
+    } else {
+      console.log(
+        `Ganó ${v} veces, perdio ${p} veces y hubo empate ${e} veces`
+      );
+      rl.close();
+    }
+  });
+}
+part();
+*/
