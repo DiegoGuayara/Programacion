@@ -1,0 +1,11 @@
+"use strict";
+let v = true;
+const f = false;
+let ent = 2;
+const dec = 3.14;
+let a = "hola";
+let b = 2;
+const c = true;
+let nombre = prompt("Ingrese su nombre");
+const apellido = prompt("Ingrese su apellido");
+console.log(`Bienvenido/a ${nombre} ${apellido}  a nuestro sitio web, gracias por registrarte`);
