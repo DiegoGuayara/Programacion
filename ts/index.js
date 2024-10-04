@@ -91,15 +91,54 @@ console.log(
 // console.log(numeros);
 // numeros.num3 = 30;
 // console.log(numeros);
-
 //Ejercicio 7
 // for (let i: number = 0; i <= 10; i++) {
 //   console.log(i);
 // }
-
-let prg = prompt("Quiere salir o no?");
-while (prg != "Salir") {
-  alert("No ha salido");
-  prg = prompt("Quiere salir o no?");
-}
-alert("Ya salio");
+// let prg: string | null = prompt("Quiere salir o no?");
+// while (prg != "Salir") {
+//   alert("No ha salido");
+//   prg = prompt("Quiere salir o no?");
+// }
+// alert("Ya salio");
+// Ejercicio 8
+// function sum(num: number, num2?: number) {
+//   if (num2) {
+//     return `La suma de los dos numeros es ${num + num2}`;
+//   } else {
+//     return `El numero ingresado es ${num}`;
+//   }
+// }
+// console.log(sum(1, 3));
+//Documento 2
+//Ejercicio 1
+// function variables(n: number, b?: boolean, s: string = "Hola") {
+//   return `${n} ${b} ${s} `;
+// }
+// console.log(variables(5, true));
+//Ejercicio 2
+// let suma: (x: number, y: number) => number;
+// suma = (x, y) => {
+//   return x + y;
+// };
+// console.log(suma(5, 3));
+//Ejercicio 3
+// setTimeout(() => console.log("HOLA ADSI"), 5000);
+//Ejercicio 4
+// let saludo: () => string;
+// saludo = () => {
+//   return "Hola ADSI";
+// };
+// console.log(saludo());
+// //O tambien de esta manera
+// let saludo2: () => void;
+// saludo2 = () => {
+//   console.log("Hola ADSI");
+// };
+// saludo2();
+//Ejercicio 5
+// let edad: (x: number) => void;
+// edad = (x) => {
+//   console.log(`La edad ingresada es ${x}`);
+// };
+// edad(5);
