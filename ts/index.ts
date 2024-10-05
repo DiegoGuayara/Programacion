@@ -1,3 +1,4 @@
+//Documento 1
 // Ejercicio 1
 /*let v: boolean = true;
 const f: boolean = false;
@@ -171,3 +172,129 @@ console.log(
 // };
 
 // edad(5);
+
+//Ejercicio 6
+// let prod: (x: number, y: number) => void;
+
+// prod = (x, y) => {
+//   console.log(`El producto de los dos numeros ingresados es ${x * y}`);
+// };
+
+// prod(5, 2);
+
+//Ejercicio 7
+// let mod = (x: number, y: number): number => {
+//   let resmod = x % y;
+//   return resmod;
+// };
+
+// console.log(mod(100, 2));
+
+//Documento 3
+//Ejercicio 1
+// const saludo: Promise<string> = new Promise((resolve) => {
+//   let exito: boolean = true;
+//   if (exito) {
+//     resolve("Somos programadores, hacemos mover el mundo");
+//   }
+// });
+
+// saludo.then((res: string) => {
+//   console.log(res);
+// });
+
+//Ejercicio 2
+// const err: Promise<string> = new Promise((resolve, reject) => {
+//   reject("Ha ocurrido un error desconocido.");
+// });
+
+// err.catch((error: string) => {
+//   console.log(error);
+// });
+
+//Ejercicio 3
+// const sub: Promise<string> = new Promise((resolve, reject) => {
+//   let prg: string | null = prompt("Ingrese que estrato tiene usted");
+
+//   if (prg !== null) {
+//     let est: number = Number(prg);
+//     if (!isNaN(est)) {
+//       if (est > 0 && est <= 2) {
+//         resolve("Tiene derecho a subdisio");
+//       } else if (est > 2 && est <= 6) {
+//         resolve("No tiene derecho a subsidio");
+//       } else {
+//         reject(new Error("Se sale de rango"));
+//       }
+//     } else {
+//       reject(new Error("Dato no valido"));
+//     }
+//   }
+// });
+
+// sub
+//   .then((res: string) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error("Ha ocurrido un error:", err.message);
+//   });
+
+//Ejercicio 4
+// const pot: Promise<number> = new Promise((resolve) => {
+//   resolve(2);
+// });
+
+// pot
+//   .then((x: number) => (x **= 2))
+//   .then((x: number) => (x **= 2))
+//   .then((x: number) => (x **= 2))
+//   .then((x: number) => console.log(`El valor final es ${x}`))
+//   .catch((error: string) => console.error(error));
+
+//Ejercicio 5
+// const promesa1: Promise<string> = new Promise((resolve) => {
+//   resolve("Somos ADSI");
+// });
+
+// const promesa2: Promise<string> = new Promise((resolve, reject) => {
+//   let resp: boolean = false;
+
+//   if (resp) {
+//     resolve("Somos programadores");
+//   } else {
+//     reject("Promesa 2 no cumplida");
+//   }
+// });
+
+// const promesa3: Promise<string> = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve("Hacemos mover el mundo");
+//   }, 1000);
+// });
+
+// promesa1.then((res: string) => console.log(res));
+
+// promesa2
+//   .then((res: string) => console.log(res))
+//   .catch((error) => console.error(error));
+
+// promesa3.then((res: string) => console.log(res));
+
+//Ejercicio 6
+// const as: Promise<string> = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Promesa resuelta");
+//   }, 2000);
+
+//   setTimeout(() => {
+//     reject(new Error("info error"));
+//   }, 1000);
+// });
+
+// as.then((res) => console.log(res)).catch((error) => {
+//   console.error(error);
+//   console.error(error.stack);
+// });
+
+//Ejercicio 7
