@@ -243,4 +243,78 @@ console.log(
 //   console.error(error);
 //   console.error(error.stack);
 // });
-//Ejercicio 7
+// Ejercicio 7
+// const promesa1: Promise<string> = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve("Promesa 1 resuelta");
+//   }, 1000);
+// });
+// const promesa2: Promise<string> = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve("Promesa 2 resuelta");
+//   }, 3000);
+// });
+// const promesa3: Promise<string> = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve("Promesa 3 resuelta");
+//   }, 2000);
+// });
+// const promesa4: Promise<string> = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     reject(new Error("Promesa 4 fallida"));
+//   }, 5000);
+// });
+// Promise.all([promesa1, promesa2, promesa3, promesa4])
+//   .then((res) => {
+//     res.forEach((ress) => {
+//       console.log("Promesa resuelta:", ress);
+//     });
+//   })
+//   .catch((error) => {
+//     console.error("Occurio un error:", error.message);
+//   });
+// Promise.race([promesa1, promesa2]).then((res) => {
+//   console.log(res);
+// });
+//Documento 4
+//Ejercicio 1
+// async function cuadrado(num: number): Promise<number> {
+//   return new Promise((resolve, reject) => {
+//     if (typeof num === "number") {
+//       resolve(num * num);
+//     } else {
+//       reject("El argumento ingresado no es un numero");
+//     }
+//   });
+// }
+// cuadrado(4)
+//   .then((res: number) => {
+//     console.log(res);
+//   })
+//   .catch((error) => {
+//     console.error("Error:", error);
+//   });
+//Ejercicio 2
+// async function num(): Promise<number> {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(8);
+//     }, 6000);
+//   });
+// }
+// num().then((res) => {
+//   console.log(res);
+// });
+//Ejercicio 3
+// async function pot(x: number): Promise<void> {
+//   let num = await new Promise<number>((resolve, reject) => {
+//     if (typeof x === "number") {
+//       resolve(x ** 2);
+//     } else {
+//       reject("El argumento no es un numero");
+//     }
+//   });
+//   console.log(`El cuadrado del numero ${x} es: ${num}`);
+// }
+// pot(54);
+//POO
