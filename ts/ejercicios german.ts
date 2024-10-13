@@ -204,13 +204,13 @@ console.log(
 // });
 
 //Ejercicio 2
-// const err: Promise<string> = new Promise((resolve, reject) => {
-//   reject("Ha ocurrido un error desconocido.");
-// });
+const err: Promise<string> = new Promise((resolve, reject) => {
+  reject("Ha ocurrido un error desconocido.");
+});
 
-// err.catch((error: string) => {
-//   console.log(error);
-// });
+err.catch((error: string) => {
+  console.error(error);
+});
 
 //Ejercicio 3
 // const sub: Promise<string> = new Promise((resolve, reject) => {
