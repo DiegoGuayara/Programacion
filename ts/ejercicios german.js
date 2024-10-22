@@ -167,12 +167,12 @@ console.log(
 //   console.log(res);
 // });
 //Ejercicio 2
-const err = new Promise((resolve, reject) => {
-    reject("Ha ocurrido un error desconocido.");
-});
-err.catch((error) => {
-    console.error(error);
-});
+// const err: Promise<string> = new Promise((resolve, reject) => {
+//   reject("Ha ocurrido un error desconocido.");
+// });
+// err.catch((error: string) => {
+//   console.error(error);
+// });
 //Ejercicio 3
 // const sub: Promise<string> = new Promise((resolve, reject) => {
 //   let prg: string | null = prompt("Ingrese que estrato tiene usted");
@@ -318,3 +318,67 @@ err.catch((error) => {
 // }
 // pot(54);
 //POO
+//Ejercicio 1
+// class Coche {
+//   public marca: string;
+//   private placa: string;
+//   constructor(marca: string, placa: string) {
+//     this.marca = marca;
+//     this.placa = placa;
+//   }
+//   datosCoche(): void {
+//     console.log(
+//       `Marca del carro: ${this.marca}, Numero de placa: ${this.placa}`
+//     );
+//   }
+//   static mensaje() {
+//     console.log("Bienvenido a la clase coche");
+//   }
+// }
+// let coche1 = new Coche("Ford", "GSM947");
+// coche1.datosCoche();
+// Coche.mensaje();
+//Ejercicio 2
+// class Robot {
+//   public nombre: string;
+//   public estado: boolean;
+//   private static tiempoDuracion: string =
+//     "La duracion de los robots depende de como lo van a crear";
+//   private bateria: number;
+//   constructor(nombre: string, estado: boolean) {
+//     this.nombre = nombre;
+//     this.estado = estado;
+//     this.bateria = 100;
+//   }
+//   datosRobot() {
+//     console.log(`Nombre robot: ${this.nombre}, Bateria: ${this.bateria}%`);
+//   }
+//   estadoRobot() {
+//     if (this.estado == false) {
+//       console.log(`${this.nombre} esta apagado`);
+//     } else if (this.estado == true) {
+//       console.log(`${this.nombre} esta encendido`);
+//     }
+//   }
+//   encender() {
+//     this.estado = true;
+//   }
+//   apagar() {
+//     this.estado = false;
+//   }
+//   static funcionRobots() {
+//     console.log("Los robots pueden trabajar de forma autónoma.");
+//   }
+//   static tiempoDuracionRobot() {
+//     console.log(`${this.tiempoDuracion}`);
+//   }
+// }
+// let robot1 = new Robot("R2-D2", false);
+// robot1.datosRobot();
+// robot1.estadoRobot();
+// robot1.encender();
+// robot1.estadoRobot();
+// robot1.apagar();
+// robot1.estadoRobot();
+// Robot.funcionRobots();
+// Robot.tiempoDuracionRobot();
