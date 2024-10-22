@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class diego{
+public class Diego{
 	static int saldo = 0;
 	public static void main(String args[]){
 		saludar();
