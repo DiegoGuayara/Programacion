@@ -382,3 +382,61 @@ console.log(
 // robot1.estadoRobot();
 // Robot.funcionRobots();
 // Robot.tiempoDuracionRobot();
+//Ejercicio 3
+// class Pc {
+//   public nombre: string;
+//   public modelo: string;
+//   private estado: boolean;
+//   private marca: string;
+//   constructor(nombre: string, modelo: string, estado: boolean, marca: string) {
+//     this.nombre = nombre;
+//     this.modelo = modelo;
+//     this.estado = estado;
+//     this.marca = marca;
+//   }
+//   mostrarDatos() {
+//     console.log(`Nombre del PC: ${this.nombre}.
+// Modelo: ${this.modelo}.
+// Marca: ${this.marca}.`);
+//   }
+//   encender(): void {
+//     if (this.estado === false) {
+//       this.estado = true;
+//     } else if (this.estado === true) {
+//       console.log(`${this.nombre} ya está encendido`);
+//     }
+//   }
+//   apagar(): void {
+//     if (this.estado === true) {
+//       this.estado = false;
+//     } else if (this.estado === false) {
+//       console.log(`${this.nombre} ya está apagado`);
+//     }
+//   }
+//   estadoPc(): void {
+//     if (this.estado === false) {
+//       console.log(`${this.nombre} está apagado`);
+//     } else if (this.estado === true) {
+//       console.log(`${this.nombre} esta encendido`);
+//     }
+//   }
+//   static mensajeEstatico(): void {
+//     console.log("Las PCs son herramientas esenciales para el trabajo diario.");
+//   }
+//   static funcionPC(): void {
+//     console.log(
+//       "Las PCs pueden realizar muchas tareas, como procesamiento de datos y juegos."
+//     );
+//   }
+// }
+// const pc1 = new Pc("Dell XPS 13", "XPS 13 9310", false, "Dell");
+// pc1.mostrarDatos();
+// pc1.estadoPc();
+// pc1.apagar();
+// pc1.encender();
+// pc1.estadoPc();
+// pc1.encender();
+// pc1.apagar();
+// pc1.estadoPc();
+// Pc.mensajeEstatico();
+// Pc.funcionPC();
