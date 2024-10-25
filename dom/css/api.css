@@ -1,5 +1,6 @@
 body {
   height: 100vh;
+  background-image: linear-gradient(270deg, grey 50%, red);
 }
 
 #datos {
@@ -8,9 +9,22 @@ body {
   text-align: center;
 }
 
+#datos .titulos {
+  transition: 0.5s;
+}
+#datos .titulos:hover {
+  text-shadow: 5px 5px 10px #ff0000;
+}
+
 #load {
   border-radius: 10px;
   width: 5rem;
   height: 3rem;
   cursor: pointer;
+}
+
+#botonLoad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

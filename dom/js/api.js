@@ -18,9 +18,15 @@ function fetchdatos() {
         const ruta3 = datos.ruta3 ? datos.ruta3 : "";
 
         datosElement.innerHTML = `
-        <h2>
-          ${ruta1} 
-          ${ruta2} 
+        <h2 class="titulos">
+          ${ruta1}  
+        </h2>
+
+        <h2 class="titulos">
+          ${ruta2}
+        </h2>
+
+        <h2 class="titulos">
           ${ruta3}
         </h2>
         `;
