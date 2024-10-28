@@ -480,7 +480,7 @@ part();
 */
 
 //Ejercicio
-/*let saldo = 0;
+let saldo = 0;
 
 function cajero() {
   let prg = parseInt(
@@ -517,7 +517,6 @@ function cajero() {
   }
 }
 cajero();
-*/
 
 /*let prcpro = parseFloat(
   prompt("Ingrese el precio total de los productos y servicios a pagar")

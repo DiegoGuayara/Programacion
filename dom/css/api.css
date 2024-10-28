@@ -16,11 +16,20 @@ body {
   text-shadow: 5px 5px 10px #ff0000;
 }
 
-#load {
+#load,
+#refresh {
   border-radius: 10px;
   width: 5rem;
   height: 3rem;
   cursor: pointer;
+  transition: 0.8s;
+}
+
+#load:hover,
+#refresh:hover {
+  box-shadow: 5px 5px 15px rgb(61, 27, 117);
+  background-image: linear-gradient(blue, darkblue);
+  color: azure;
 }
 
 #botonLoad {

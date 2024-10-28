@@ -1,4 +1,9 @@
 document.getElementById("load").addEventListener("click", fetchdatos);
+document.getElementById("refresh").addEventListener("click", refreshPage);
+
+function refreshPage() {
+  location.reload();
+}
 
 function fetchdatos() {
   const urlApi = "https://nodejs-api-rstq.onrender.com/";
@@ -17,10 +22,17 @@ function fetchdatos() {
         const ruta2 = datos.ruta2 ? datos.ruta2 : "";
         const ruta3 = datos.ruta3 ? datos.ruta3 : "";
 
-        datosElement.innerHTML = `
+        if (datos.img1) {
+          const img1Element = document.createElement("img");
+          img1Element.src = datos.img1;
+          datosElement.appendChild(img1Element);
+        }
+
+        datosElement.innerHTML += `
         <h2 class="titulos">
           ${ruta1}  
         </h2>
+
 
         <h2 class="titulos">
           ${ruta2}
