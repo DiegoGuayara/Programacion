@@ -39,6 +39,7 @@ footer > p {
 }
 
 footer > p > a {
+  text-decoration: none;
   color: black;
 }
 
@@ -115,6 +116,7 @@ section > article > nav > .sep {
   gap: 10rem;
   margin: 12rem;
   margin-top: 4rem;
+  
 }
 
 #parte1 > article > img {
