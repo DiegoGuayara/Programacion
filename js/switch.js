@@ -346,605 +346,368 @@ switch(biblioteca){
 */
 
 //Domicilios
-/*let restaurantes = prompt(`Esto es un servicio de entrega a domicilio de comida, en estos diferentes restaurantes puede comprar:
-Hamburguesas.
-Pizzas.
-Comida china.
-Cual de estos restaurante escoge? Puede seleccionar varios`)
+/*let hamsimp = 25000;
+let pizfam = 85000;
+let fidpol = 18000;
+let pagoTotal = 0;
+let domicilio = 5000;
+let cantidad = 0;
+let pago;
+let rest = prompt(`Elija el/los restaurante/s donde vaya a pedir :
+1.Hamburguesas.
+2.Pizzeria.
+3.Comida china.`);
 
-function hamburguesas() {
-    menuHam = parseInt(prompt(`El menu de este restaurante es:
-    1. Hamburguesa pequeña 5000 pesos.
-    2. Hamburguesa mediana 8000 pesos.
-    3. Hamburguesa grande 12000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos.`))
-    pago = prompt("Por cual medio va a pagar? Puede pagar en efectivo o con tarjeta credito/debito")
-    hamp = 5000
-    hamm = 8000
-    hamg = 12000
-    domicilio = 5000
-    tothamp = (hamp * cantidad + domicilio)
-    tothamm = (hamm * cantidad + domicilio)
-    tothamg = (hamg * cantidad + domicilio)
+switch (rest) {
+  case "Hamburguesas": {
+    ham();
+    break;
+  }
+
+  case "Pizzeria": {
+    piz();
+    break;
+  }
+
+  case "Comida china": {
+    chin();
+    break;
+  }
+
+  case "Hamburguesas y Pizzeria": {
+    hampiz();
+    break;
+  }
+
+  case "Hamburguesas y Comida china": {
+    hamchin();
+    break;
+  }
+
+  case "Pizzeria y Comida china": {
+    pizchin();
+    break;
+  }
+
+  case "Hamburguesas, Pizzeria y Comida china": {
+    hampizchin();
+    break;
+  }
+
+  default: {
+    alert("Opción no válida");
+  }
 }
 
-function pizzas() {
-    menuPiz = parseInt(prompt(`El menu de este restaurante es:
-    1. Pizza hawaiana 7000 pesos.
-    2. Pizza con champiñones 9000 pesos.
-    3. Pizza con carnes 12000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos`))
-    pago = prompt("Por cual medio va a pagar? Puede pagar en efectivo o con tarjeta credito/debito")
-    pizha = 7000
-    pizch = 9000
-    pizca = 12000
-    domicilio = 5000
-    totpizha = (pizha * cantidad + domicilio)
-    totpizch = (pizch * cantidad + domicilio)
-    totpizca = (pizca * cantidad + domicilio)
-}
-
-function comidachina() {
-    menuCch = parseInt(prompt(`El menu de este restaurante es:
-    1. Fideos instantaneos 4000 pesos.
-    2. Chop suey 6000 pesos.
-    3. Arroz chino 8000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos`))
-    pago = prompt("Por cual medio va a pagar? Puede pagar en efectivo o con tarjeta credito/debito")
-    cchfi = 4000
-    cchsu = 6000
-    cchar = 8000
-    domicilio = 5000
-    totcchfi = (cchfi * cantidad + domicilio)
-    totcchsu = (cchsu * cantidad + domicilio)
-    totcchar = (cchar * cantidad + domicilio)
-}
-
-function hamPiz() {
-    menuHam = parseInt(prompt(`El menu de este restaurante es:
-    1. Hamburguesa pequeña 5000 pesos.
-    2. Hamburguesa mediana 8000 pesos.
-    3. Hamburguesa grande 12000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos.`))
-    hamp = 5000
-    hamm = 8000
-    hamg = 12000
-    domicilio = 5000
-    tothamp = (hamp * cantidad + domicilio)
-    tothamm = (hamm * cantidad + domicilio)
-    tothamg = (hamg * cantidad + domicilio)
-    menuPiz = parseInt(prompt(`El menu de este restaurante es:
-    1. Pizza hawaiana 7000 pesos.
-    2. Pizza con champiñones 9000 pesos.
-    3. Pizza con carnes 12000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad2 = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos`))
-    pago = prompt("Por cual medio va a pagar? Puede pagar en efectivo o con tarjeta credito/debito")
-    pizha = 7000
-    pizch = 9000
-    pizca = 12000
-    domicilio = 5000
-    totpizha = (pizha * cantidad2 + domicilio)
-    totpizch = (pizch * cantidad2 + domicilio)
-    totpizca = (pizca * cantidad2 + domicilio)
-}
-
-function hamCch() {
-    menuHam = parseInt(prompt(`El menu de este restaurante es:
-    1. Hamburguesa pequeña 5000 pesos.
-    2. Hamburguesa mediana 8000 pesos.
-    3. Hamburguesa grande 12000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos.`))
-    menuCch = parseInt(prompt(`El menu de este restaurante es:
-    1. Fideos instantaneos 4000 pesos.
-    2. Chop suey 6000 pesos.
-    3. Arroz chino 8000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad2 = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos`))
-    pago = prompt("Por cual medio va a pagar? Puede pagar en efectivo o con tarjeta credito/debito")
-    hamp = 5000
-    hamm = 8000
-    hamg = 12000
-    domicilio = 5000
-    tothamp = (hamp * cantidad + domicilio)
-    tothamm = (hamm * cantidad + domicilio)
-    tothamg = (hamg * cantidad + domicilio)
-    cchfi = 4000
-    cchsu = 6000
-    cchar = 8000
-    domicilio = 5000
-    totcchfi = (cchfi * cantidad2 + domicilio)
-    totcchsu = (cchsu * cantidad2 + domicilio)
-    totcchar = (cchar * cantidad2 + domicilio)
-}
-
-function pizCch() {
-    menuPiz = parseInt(prompt(`El menu de este restaurante es:
-    1. Pizza hawaiana 7000 pesos.
-    2. Pizza con champiñones 9000 pesos.
-    3. Pizza con carnes 12000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos`))
-    pizha = 7000
-    pizch = 9000
-    pizca = 12000
-    domicilio = 5000
-    totpizha = (pizha * cantidad + domicilio)
-    totpizch = (pizch * cantidad + domicilio)
-    totpizca = (pizca * cantidad + domicilio)
-    menuCch = parseInt(prompt(`El menu de este restaurante es:
-    1. Fideos instantaneos 4000 pesos.
-    2. Chop suey 6000 pesos.
-    3. Arroz chino 8000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad2 = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos`))
-    pago = prompt("Por cual medio va a pagar? Puede pagar en efectivo o con tarjeta credito/debito")
-    cchfi = 4000
-    cchsu = 6000
-    cchar = 8000
-    domicilio = 5000
-    totcchfi = (cchfi * cantidad2 + domicilio)
-    totcchsu = (cchsu * cantidad2 + domicilio)
-    totcchar = (cchar * cantidad2 + domicilio)
-}
-
-function todo() {
-    menuHam = parseInt(prompt(`El menu de este restaurante es:
-    1. Hamburguesa pequeña 5000 pesos.
-    2. Hamburguesa mediana 8000 pesos.
-    3. Hamburguesa grande 12000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos.`))
-    hamp = 5000
-    hamm = 8000
-    hamg = 12000
-    domicilio = 5000
-    tothamp = (hamp * cantidad + domicilio)
-    tothamm = (hamm * cantidad + domicilio)
-    tothamg = (hamg * cantidad + domicilio)
-    menuPiz = parseInt(prompt(`El menu de este restaurante es:
-    1. Pizza hawaiana 7000 pesos.
-    2. Pizza con champiñones 9000 pesos.
-    3. Pizza con carnes 12000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad2 = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos`))
-    pizha = 7000
-    pizch = 9000
-    pizca = 12000
-    domicilio = 5000
-    totpizha = (pizha * cantidad2 + domicilio)
-    totpizch = (pizch * cantidad2 + domicilio)
-    totpizca = (pizca * cantidad2 + domicilio)
-    menuCch = parseInt(prompt(`El menu de este restaurante es:
-    1. Fideos instantaneos 4000 pesos.
-    2. Chop suey 6000 pesos.
-    3. Arroz chino 8000 pesos.
-    Cual quiere escoger? Si no va a escoger nada omita esto`))
-    cantidad3 = parseInt(prompt(`Que cantidad quiere de ese producto?
-    El precio maximo es de 25000 pesos`))
-    pago = prompt("Por cual medio va a pagar? Puede pagar en efectivo o con tarjeta credito/debito")
-    cchfi = 4000
-    cchsu = 6000
-    cchar = 8000
-    domicilio = 5000
-    totcchfi = (cchfi * cantidad3 + domicilio)
-    totcchsu = (cchsu * cantidad3 + domicilio)
-    totcchar = (cchar * cantidad3 + domicilio)
-}
-
-switch (restaurantes) {
-
-    case "Hamburguesas": {
-        hamburguesas()
-
-        if (menuHam == "1" || menuHam == "2" || menuHam == "3") {
-            alert("Ya lo preparamos")
-        } else {
-            alert("No dijo que producto quiere")
-        }
-
-        if (menuHam == "1" && tothamp <= 25000) {
-            alert("Serian " + tothamp + " pesos junto con el precio del domicilio.")
-
-        } else if (menuHam == "2" && tothamm <= 25000) {
-            alert("Serian " + tothamm + " pesos junto con el precio del domicilio.")
-
-        } else if (menuHam == "3" && tothamg <= 25000) {
-            alert("Serian " + tothamg + " pesos junto con el precio del domicilio.")
-
-        } else if ((tothamp || tothamm || tothamg) > 25000) {
-            alert("Se pasó del precio")
-        }
-
-        if (pago == "Efectivo" || pago == "Tarjeta credito" || pago == "Tarjeta debito") {
-            alert("Ya esta pago su pedido, el domicilio llegara a su casa en 45 minutos o en 1 hora. Gracias por comprar")
-        } else {
-            alert("No dijo con que medio va a pagar el domicilio")
-        }
-        break
-
-    } case "Pizzas": {
-        pizzas()
-
-        if (menuPiz == "1" || menuPiz == "2" || menuPiz == "3") {
-            alert("Ya lo preparamos")
-        } else {
-            alert("No dijo que producto quiere")
-        }
-
-        if (menuPiz == "1" && totpizha <= 25000) {
-            alert("Serian " + totpizha + " pesos junto con el precio del domicilio.")
-
-        } else if (menuPiz == "2" && totpizch <= 25000) {
-            alert("Serian " + totpizch + " pesos junto con el precio del domicilio.")
-
-        } else if (menuPiz == "3" && totpizca <= 25000) {
-            alert("Serian " + totpizca + " pesos junto con el precio del domicilio.")
-
-        } else if ((totpizha || totpizch || totpizca) > 25000) {
-            alert("Se pasó del precio")
-        }
-
-        if (pago == "Efectivo" || pago == "Tarjeta credito" || pago == "Tarjeta debito") {
-            alert("Ya esta pago su pedido, el domicilio llegara a su casa en 45 minutos o en 1 hora. Gracias por comprar")
-        } else {
-            alert("No dijo con que medio va a pagar el domicilio")
-        }
-        break
-
-    } case "Comida china": {
-        comidachina()
-
-        if (menuCch == "1" || menuCch == "2" || menuCch == "3") {
-            alert("Ya lo preparamos")
-        } else {
-            alert("No dijo que producto quiere")
-        }
-
-        if (menuCch == "1" && totcchfi <= 25000) {
-            alert("Serian " + totcchfi + " pesos junto con el precio del domicilio.")
-
-        } else if (menuCch == "2" && totcchsu <= 25000) {
-            alert("Serian " + totcchsu + " pesos junto con el precio del domicilio.")
-
-        } else if (menuCch == "3" && totcchar <= 25000) {
-            alert("Serian " + totcchar + " pesos junto con el precio del domicilio.")
-
-        } else if ((totcchfi || totcchsu || totcchar) > 25000) {
-            alert("Se pasó del precio")
-        }
-
-        if (pago == "Efectivo" || pago == "Tarjeta credito" || pago == "Tarjeta debito") {
-            alert("Ya esta pago su pedido, el domicilio llegara a su casa en 45 minutos o en 1 hora. Gracias por comprar")
-        } else {
-            alert("No dijo con que medio va a pagar el domicilio")
-        }
-        break
-
-    } case "Hamburguesas, Pizzas":
-    case "Pizzas, Hamburguesas": {
-        hamPiz()
-
-        if ((menuHam == "1" && menuPiz == "1") && (tothamp + totpizha - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas y ${cantidad2} pizzas hawaianas serian ` + ((tothamp + totpizha) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "2") && (tothamp + totpizch - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas y ${cantidad2} pizzas con champiñones serian ` + ((tothamp + totpizch) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "3") && (tothamp + totpizca - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas y ${cantidad2} pizzas con carnes serian ` + ((tothamp + totpizca) - domicilio) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "2" && menuPiz == "1") && (tothamm + totpizha - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas y ${cantidad2} pizzas hawaianas serian ` + ((tothamm + totpizha) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuPiz == "2") && (tothamm + totpizch - domicilio) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas y ${cantidad2} pizzas con champiñones serian ` + ((tothamm + totpizch) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuPiz == "3") && (tothamm + totpizca - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas y ${cantidad2} pizzas con carnes serian ` + ((tothamm + totpizca) - domicilio) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "3" && menuPiz == "1") && (tothamg + totpizha - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes y ${cantidad2} pizzas hawaianas serian ` + ((tothamg + totpizha) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuPiz == "2") && (tothamg + totpizch - domicilio) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes y ${cantidad2} pizzas con champiñones serian ` + ((tothamg + totpizch) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuPiz == "3") && (tothamg + totpizca - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes y ${cantidad2} pizzas con carnes serian ` + ((tothamg + totpizca) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "1") && (tothamp + totpizha - domicilio) ||
-            (menuHam == "1" && menuPiz == "2") && (tothamp + totpizch - domicilio) ||
-            (menuHam == "1" && menuPiz == "3") && (tothamp + totpizca - domicilio) ||
-            (menuHam == "2" && menuPiz == "1") && (tothamm + totpizha - domicilio) ||
-            (menuHam == "2" && menuPiz == "2") && (tothamm + totpizch - domicilio) ||
-            (menuHam == "2" && menuPiz == "3") && (tothamm + totpizca - domicilio) ||
-            (menuHam == "3" && menuPiz == "1") && (tothamg + totpizha - domicilio) ||
-            (menuHam == "3" && menuPiz == "2") && (tothamg + totpizch - domicilio) ||
-            (menuHam == "3" && menuPiz == "3") && (tothamg + totpizca - domicilio) > 50000) {
-            alert("Se pasó del precio")
-        } else {
-            alert("No dijo que productos quiere")
-        }
-
-        if (pago == "Efectivo" || pago == "Tarjeta credito" || pago == "Tarjeta debito") {
-            alert("Ya esta pago su pedido, el domicilio llegara a su casa en 45 minutos o en 1 hora. Gracias por comprar")
-        } else {
-            alert("No dijo con que medio va a pagar el domicilio")
-        }
-        break
-
-    } case "Hamburguesas, Comida china":
-    case "Comida china, Hamburguesas": {
-        hamCch()
-
-        if ((menuHam == "1" && menuCch == "1") && (tothamp + totcchfi - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas y ${cantidad2} fideos instantaneos serian ` + ((tothamp + totcchfi) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuCch == "2") && (tothamp + totcchsu - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas y ${cantidad2} chop suey serian ` + ((tothamp + totcchsu) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuCch == "3") && (tothamp + totcchar - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas y ${cantidad2} arroz chino serian ` + ((tothamp + totcchar) - domicilio) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "2" && menuCch == "1") && (tothamm + totcchfi - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas y ${cantidad2} fideos instantaneos serian ` + ((tothamm + totcchfi) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuCch == "2") && (tothamm + totcchsu - domicilio) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas y ${cantidad2} chop suey serian ` + ((tothamm + totcchsu) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuCch == "3") && (tothamm + totcchar - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas y ${cantidad2} arroz chino serian ` + ((tothamm + totcchar) - domicilio) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "3" && menuCch == "1") && (tothamg + totcchfi - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes y ${cantidad2} fideos instantaneos serian ` + ((tothamg + totcchfi) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuCch == "2") && (tothamg + totcchsu - domicilio) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes y ${cantidad2} chop suey serian ` + ((tothamg + totcchsu) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuCch == "3") && (tothamg + totcchar - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes y ${cantidad2} arroz chino serian ` + ((tothamg + totcchar) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuCch == "1") && (tothamp + totcchfi - domicilio) ||
-            (menuHam == "1" && menuCch == "2") && (tothamp + totcchsu - domicilio) ||
-            (menuHam == "1" && menuCch == "3") && (tothamp + totcchar - domicilio) ||
-            (menuHam == "2" && menuCch == "1") && (tothamm + totcchfi - domicilio) ||
-            (menuHam == "2" && menuCch == "2") && (tothamm + totcchsu - domicilio) ||
-            (menuHam == "2" && menuCch == "3") && (tothamm + totcchar - domicilio) ||
-            (menuHam == "3" && menuCch == "1") && (tothamg + totcchfi - domicilio) ||
-            (menuHam == "3" && menuCch == "2") && (tothamg + totcchsu - domicilio) ||
-            (menuHam == "3" && menuCch == "3") && (tothamg + totcchar - domicilio) > 50000) {
-            alert("Se pasó del precio")
-        } else {
-            alert("No dijo que productos quiere")
-        }
-
-        if (pago == "Efectivo" || pago == "Tarjeta credito" || pago == "Tarjeta debito") {
-            alert("Ya esta pago su pedido, el domicilio llegara a su casa en 45 minutos o en 1 hora. Gracias por comprar")
-        } else {
-            alert("No dijo con que medio va a pagar el domicilio")
-        }
-        break
-
-    } case "Pizzas, Comida china":
-    case "Comida china, Pizzas": {
-        pizCch()
-
-        if ((menuPiz == "1" && menuCch == "1") && (totpizha + totcchfi - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} pizzas hawaianas y ${cantidad2} fideos instantaneos serian ` + ((totpizha + totcchfi) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuPiz == "1" && menuCch == "2") && (totpizha + totcchsu - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} pizzas hawaianas y ${cantidad2} chop suey serian ` + ((totpizha + totcchsu) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuPiz == "1" && menuCch == "3") && (totpizha + totcchar - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} pizzas hawaianas y ${cantidad2} arroz chino serian ` + ((totpizha + totcchar) - domicilio) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuPiz == "2" && menuCch == "1") && (totpizch + totcchfi - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} pizzas con champiñones y ${cantidad2} fideos instantaneos serian ` + ((totpizch + totcchfi) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuPiz == "2" && menuCch == "2") && (totpizch + totcchsu - domicilio) <= 100000) {
-            alert(`Al pedír ${cantidad} pizzas con champiñones y ${cantidad2} chop suey serian ` + ((totpizch + totcchsu) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuPiz == "2" && menuCch == "3") && (totpizch + totcchar - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} pizzas con champiñones y ${cantidad2} arroz chino serian ` + ((totpizch + totcchar) - domicilio) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuPiz == "3" && menuCch == "1") && (totpizca + totcchfi - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} pizzas con carnes y ${cantidad2} fideos instantaneos serian ` + ((totpizca + totcchfi) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuPiz == "3" && menuCch == "2") && (totpizca + totcchsu - domicilio) <= 100000) {
-            alert(`Al pedír ${cantidad} pizzas con carnes y ${cantidad2} chop suey serian ` + ((totpizca + totcchsu) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuPiz == "3" && menuCch == "3") && (totpizca + totcchar - domicilio) <= 50000) {
-            alert(`Al pedír ${cantidad} pizzas con carnes y ${cantidad2} arroz chino serian ` + ((totpizca + totcchar) - domicilio) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuPiz == "1" && menuCch == "1") && (totpizha + totcchfi - domicilio) ||
-            (menuPiz == "1" && menuCch == "2") && (totpizha + totcchsu - domicilio) ||
-            (menuPiz == "1" && menuCch == "3") && (totpizha + totcchar - domicilio) ||
-            (menuPiz == "2" && menuCch == "1") && (totpizch + totcchfi - domicilio) ||
-            (menuPiz == "2" && menuCch == "2") && (totpizch + totcchsu - domicilio) ||
-            (menuPiz == "2" && menuCch == "3") && (totpizch + totcchar - domicilio) ||
-            (menuPiz == "3" && menuCch == "1") && (totpizca + totcchfi - domicilio) ||
-            (menuPiz == "3" && menuCch == "2") && (totpizca + totcchsu - domicilio) ||
-            (menuPiz == "3" && menuCch == "3") && (totpizca + totcchar - domicilio) > 50000) {
-            alert("Se pasó del precio")
-        } else {
-            alert("No dijo que productos quiere")
-        }
-
-        if (pago == "Efectivo" || pago == "Tarjeta credito" || pago == "Tarjeta debito") {
-            alert("Ya esta pago su pedido, el domicilio llegara a su casa en 45 minutos o en 1 hora. Gracias por comprar")
-        } else {
-            alert("No dijo con que medio va a pagar el domicilio")
-        }
-        break
-
-    } case "Hamburguesas, Pizzas, Comida china":
-    case "Hamburguesas, Comida china, Pizzas":
-    case "Pizzas, Comida china, Hamburguesas":
-    case "Pizzas, Hamburguesas, Comida china":
-    case "Comida china, Pizzas, Hamburguesas":
-    case "Comida china, Hamburguesas, Pizzas": {
-        todo()
-
-        if ((menuHam == "1" && menuPiz == "1" && menuCch == "1") && (tothamp + totpizha + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamp + totpizha + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "1" && menuCch == "2") && (tothamp + totpizha + totcchsu - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamp + totpizha + totcchsu - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "1" && menuCch == "3") && (tothamp + totpizha + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas con carnes y ${cantidad3} arroz chino serian ` + (tothamp + totpizha + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "1" && menuPiz == "2" && menuCch == "1") && (tothamp + totpizch + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamp + totpizch + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "2" && menuCch == "2") && (tothamp + totpizch + totcchsu + (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamp + totpizch + totcchsu + (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "2" && menuCch == "3") && (tothamp + totpizch + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas con carnes y ${cantidad3} arroz chino serian ` + (tothamp + totpizch + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "1" && menuPiz == "3" && menuCch == "1") && (tothamp + totpizca + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamp + totpizca + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "3" && menuCch == "2") && (tothamp + totpizca + totcchsu - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamp + totpizca + totcchsu - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "1" && menuPiz == "3" && menuCch == "3") && (tothamp + totpizca + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas pequeñas, ${cantidad2} pizzas con carnes y ${cantidad3} arroz chino serian ` + (tothamp + totpizca + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-
-        } else if ((menuHam == "2" && menuPiz == "1" && menuCch == "1") && (tothamm + totpizha + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamm + totpizha + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuPiz == "1" && menuCch == "2") && (tothamm + totpizha + totcchsu - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamm + totpizha + totcchsu - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuPiz == "1" && menuCch == "3") && (tothamm + totpizha + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas con carnes y ${cantidad3} arroz chino serian ` + (tothamm + totpizha + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "2" && menuPiz == "2" && menuCch == "1") && (tothamm + totpizch + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamm + totpizch + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuPiz == "2" && menuCch == "2") && (tothamm + totpizch + totcchsu - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamm + totpizch + totcchsu - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuPiz == "2" && menuCch == "3") && (tothamm + totpizch + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas con carnes y ${cantidad3} arroz chino serian ` + (tothamm + totpizch + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "2" && menuPiz == "3" && menuCch == "1") && (tothamm + totpizca + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamm + totpizca + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuPiz == "3" && menuCch == "2") && (tothamm + totpizca + totcchsu - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamm + totpizca + totcchsu - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "2" && menuPiz == "3" && menuCch == "3") && (tothamm + totpizca + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas medianas, ${cantidad2} pizzas con carnes y ${cantidad3} arroz chino serian ` + (tothamm + totpizca + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-
-        } else if ((menuHam == "3" && menuPiz == "1" && menuCch == "1") && (tothamg + totpizha + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamg + totpizha + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuPiz == "1" && menuCch == "2") && (tothamg + totpizha + totcchsu - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamg + totpizha + totcchsu - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuPiz == "1" && menuCch == "3") && (tothamg + totpizha + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas con carnes y ${cantidad3} arroz chino serian ` + (tothamg + totpizha + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "3" && menuPiz == "2" && menuCch == "1") && (tothamg + totpizch + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamg + totpizch + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuPiz == "2" && menuCch == "2") && (tothamg + totpizch + totcchsu - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamg + totpizch + totcchsu - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuPiz == "2" && menuCch == "3") && (tothamg + totpizch + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas con carnes y ${cantidad3} arroz chino serian ` + (tothamg + totpizch + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-        } else if ((menuHam == "3" && menuPiz == "3" && menuCch == "1") && (tothamg + totpizca + totcchfi - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas hawaianas y ${cantidad3} fideos instantaneos serian ` + (tothamg + totpizca + totcchfi - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuPiz == "3" && menuCch == "2") && (tothamg + totpizca + totcchsu - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas con champiñones y ${cantidad3} chop suey serian ` + (tothamg + totpizca + totcchsu - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-        } else if ((menuHam == "3" && menuPiz == "3" && menuCch == "3") && (tothamg + totpizca + totcchar - (domicilio + domicilio)) <= 100000) {
-            alert(`Al pedír ${cantidad} hamburguesas grandes, ${cantidad2} pizzas con champiñones y ${cantidad3} arroz chino serian ` + (tothamg + totpizca + totcchar - (domicilio + domicilio)) + " pesos junto con el precio del domicilio.")
-
-
-        } else if (
-            (menuHam == "1" && menuPiz == "1" && menuCch == "1") && (tothamp + totpizha + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "1" && menuPiz == "1" && menuCch == "2") && (tothamp + totpizha + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "1" && menuPiz == "1" && menuCch == "3") && (tothamp + totpizha + totcchar - (domicilio + domicilio)) ||
-            (menuHam == "1" && menuPiz == "2" && menuCch == "1") && (tothamp + totpizch + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "1" && menuPiz == "2" && menuCch == "2") && (tothamp + totpizch + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "1" && menuPiz == "2" && menuCch == "3") && (tothamp + totpizch + totcchar - (domicilio + domicilio)) ||
-            (menuHam == "1" && menuPiz == "3" && menuCch == "1") && (tothamp + totpizca + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "1" && menuPiz == "3" && menuCch == "2") && (tothamp + totpizca + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "1" && menuPiz == "3" && menuCch == "3") && (tothamp + totpizca + totcchar - (domicilio + domicilio)) ||
-
-            (menuHam == "2" && menuPiz == "1" && menuCch == "1") && (tothamm + totpizha + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "2" && menuPiz == "1" && menuCch == "2") && (tothamm + totpizha + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "2" && menuPiz == "1" && menuCch == "3") && (tothamm + totpizha + totcchar - (domicilio + domicilio)) ||
-            (menuHam == "2" && menuPiz == "2" && menuCch == "1") && (tothamm + totpizch + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "2" && menuPiz == "2" && menuCch == "2") && (tothamm + totpizch + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "2" && menuPiz == "2" && menuCch == "3") && (tothamm + totpizch + totcchar - (domicilio + domicilio)) ||
-            (menuHam == "2" && menuPiz == "3" && menuCch == "1") && (tothamm + totpizca + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "2" && menuPiz == "3" && menuCch == "2") && (tothamm + totpizca + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "2" && menuPiz == "3" && menuCch == "3") && (tothamm + totpizca + totcchar - (domicilio + domicilio)) ||
-
-
-            (menuHam == "3" && menuPiz == "1" && menuCch == "1") && (tothamg + totpizha + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "3" && menuPiz == "1" && menuCch == "2") && (tothamg + totpizha + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "3" && menuPiz == "1" && menuCch == "3") && (tothamg + totpizha + totcchar - (domicilio + domicilio)) ||
-            (menuHam == "3" && menuPiz == "2" && menuCch == "1") && (tothamg + totpizch + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "3" && menuPiz == "2" && menuCch == "2") && (tothamg + totpizch + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "3" && menuPiz == "2" && menuCch == "3") && (tothamg + totpizch + totcchar - (domicilio + domicilio)) ||
-            (menuHam == "3" && menuPiz == "3" && menuCch == "1") && (tothamg + totpizca + totcchfi - (domicilio + domicilio)) ||
-            (menuHam == "3" && menuPiz == "3" && menuCch == "2") && (tothamg + totpizca + totcchsu - (domicilio + domicilio)) ||
-            (menuHam == "3" && menuPiz == "3" && menuCch == "3") && (tothamg + totpizca + totcchar - (domicilio + domicilio)) > 100000) {
-            alert("Se pasó del precio")
-        } else {
-            alert("No dijo que productos quiere")
-        }
-
-        if (pago == "Efectivo" || pago == "Tarjeta credito" || pago == "Tarjeta debito") {
-            alert("Ya esta pago su pedido, el domicilio llegara a su casa en 45 minutos o en 1 hora. Gracias por comprar")
-        } else {
-            alert("No dijo con que medio va a pagar el domicilio")
-        }
-
-        break
-
-    } default: {
-        alert("No dijo en que restaurante quiere pedir")
+function ham() {
+  let menu = prompt(
+    `El menú de este restaurante es:\nHamburguesa Simple: $25000.\nQuiere comprar esto?`
+  );
+  if (menu === "Si") {
+    cantidad = parseInt(
+      prompt(
+        "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+      )
+    );
+    pagoTotal = hamsimp * cantidad;
+
+    if (pagoTotal >= 23000) {
+      pago = prompt(
+        "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+      );
+
+      if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+        alert(
+          `El precio seria ${
+            pagoTotal + domicilio
+          } pesos mas el domicilio. El domicilio se demora de 45 minutos a 1 hora.\nMuchas gracias por comprar`
+        );
+      }
     }
+  }
+}
+
+function piz() {
+  let menu = prompt(
+    `El menú de este restaurante es:\nPizza familiar: $85000.\nQuiere comprar esto?`
+  );
+  if (menu === "Si") {
+    cantidad = parseInt(
+      prompt(
+        "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+      )
+    );
+    pagoTotal = pizfam * cantidad;
+
+    if (pagoTotal >= 23000) {
+      pago = prompt(
+        "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+      );
+
+      if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+        alert(
+          `El precio seria ${
+            pagoTotal + domicilio
+          } pesos mas el domicilio. El domicilio se demora de 45 minutos a 1 hora.\nMuchas gracias por comprar`
+        );
+      }
+    }
+  }
+}
+
+function chin() {
+  let menu = prompt(
+    `El menú de este restaurante es:\nFideos con pollo: $18000.\nQuiere comprar esto?`
+  );
+  if (menu === "Si") {
+    cantidad = parseInt(
+      prompt(
+        "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+      )
+    );
+    pagoTotal = fidpol * cantidad;
+
+    if (pagoTotal >= 23000) {
+      pago = prompt(
+        "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+      );
+
+      if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+        alert(
+          `El precio seria ${
+            pagoTotal + domicilio
+          } pesos mas el domicilio. El domicilio se demora de 45 minutos a 1 hora.\nMuchas gracias por comprar`
+        );
+      }
+    }
+  }
+}
+
+function hampiz() {
+  let menu = prompt(
+    `El menú de este restaurante es:\nHamburguesa Simple: $25000.\nQuiere comprar esto?`
+  );
+  if (menu === "Si") {
+    cantidad = parseInt(
+      prompt(
+        "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+      )
+    );
+    pagoTotal = hamsimp * cantidad;
+
+    if (pagoTotal >= 23000) {
+      pago = prompt(
+        "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+      );
+
+      if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+        alert("Redirigiendo al otro restaurante");
+        let menu = prompt(
+          `El menú de este restaurante es:\nPizza familiar: $85000.\nQuiere comprar esto?`
+        );
+        if (menu === "Si") {
+          cantidad = parseInt(
+            prompt(
+              "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+            )
+          );
+          pagoTotal = pizfam * cantidad;
+
+          if (pagoTotal >= 23000) {
+            pago = prompt(
+              "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+            );
+
+            if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+              pagoTotal = hamsimp * cantidad + pizfam * cantidad;
+              alert(
+                `El precio seria ${
+                  pagoTotal + domicilio
+                } pesos mas el domicilio. El domicilio se demora de 45 minutos a 1 hora.\nMuchas gracias por comprar`
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+function hamchin() {
+  let menu = prompt(
+    `El menú de este restaurante es:\nHamburguesa Simple: $25000.\nQuiere comprar esto?`
+  );
+  if (menu === "Si") {
+    cantidad = parseInt(
+      prompt(
+        "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+      )
+    );
+    pagoTotal = hamsimp * cantidad;
+
+    if (pagoTotal >= 23000) {
+      pago = prompt(
+        "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+      );
+
+      if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+        alert("Redirigiendo al otro restaurante");
+        let menu = prompt(
+          `El menú de este restaurante es:\nFideos con pollo: $18000.\nQuiere comprar esto?`
+        );
+        if (menu === "Si") {
+          cantidad = parseInt(
+            prompt(
+              "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+            )
+          );
+          pagoTotal = fidpol * cantidad;
+
+          if (pagoTotal >= 23000) {
+            pago = prompt(
+              "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+            );
+
+            if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+              pagoTotal = hamsimp * cantidad + fidpol * cantidad;
+              alert(
+                `El precio seria ${
+                  pagoTotal + domicilio
+                } pesos mas el domicilio. El domicilio se demora de 45 minutos a 1 hora.\nMuchas gracias por comprar`
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+function pizchin() {
+  let menu = prompt(
+    `El menú de este restaurante es:\nPizza familiar: $85000.\nQuiere comprar esto?`
+  );
+  if (menu === "Si") {
+    cantidad = parseInt(
+      prompt(
+        "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+      )
+    );
+    pagoTotal = pizfam * cantidad;
+
+    if (pagoTotal >= 23000) {
+      pago = prompt(
+        "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+      );
+
+      if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+        alert("Redirigiendo al otro restaurante");
+        let menu = prompt(
+          `El menú de este restaurante es:\nFideos con pollo: $18000.\nQuiere comprar esto?`
+        );
+        if (menu === "Si") {
+          cantidad = parseInt(
+            prompt(
+              "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+            )
+          );
+          pagoTotal = fidpol * cantidad;
+
+          if (pagoTotal >= 23000) {
+            pago = prompt(
+              "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+            );
+
+            if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+              pagoTotal = pizfam * cantidad + fidpol * cantidad;
+              alert(
+                `El precio seria ${
+                  pagoTotal + domicilio
+                } pesos mas el domicilio. El domicilio se demora de 45 minutos a 1 hora.\nMuchas gracias por comprar`
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+function hampizchin() {
+  let menu = prompt(
+    `El menú de este restaurante es:\nHamburguesa Simple: $25000.\nQuiere comprar esto?`
+  );
+  if (menu === "Si") {
+    cantidad = parseInt(
+      prompt(
+        "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+      )
+    );
+    pagoTotal = hamsimp * cantidad;
+
+    if (pagoTotal >= 23000) {
+      pago = prompt(
+        "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+      );
+
+      if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+        alert("Redirigiendo al otro restaurante");
+        let menu = prompt(
+          `El menú de este restaurante es:\nPizza familiar: $85000.\nQuiere comprar esto?`
+        );
+        if (menu === "Si") {
+          cantidad = parseInt(
+            prompt(
+              "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+            )
+          );
+          pagoTotal = pizfam * cantidad;
+
+          if (pagoTotal >= 23000) {
+            pago = prompt(
+              "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+            );
+
+            if (pago === "Efectivo" || pago === "Tarjeta debito/credito") {
+              pagoTotal = hamsimp * cantidad + pizfam * cantidad;
+              alert("Redirigiendo al otro restaurante");
+              let menu = prompt(
+                `El menú de este restaurante es:\nFideos con pollo: $18000.\nQuiere comprar esto?`
+              );
+              if (menu === "Si") {
+                cantidad = parseInt(
+                  prompt(
+                    "Diga la cantidad que quiere comprar. El minimo de compra es de 23000 pesos"
+                  )
+                );
+                pagoTotal = fidpol * cantidad;
+
+                if (pagoTotal >= 23000) {
+                  pago = prompt(
+                    "Que medio de pago va utilizar? Efectivo o Tarjeta debito/credito"
+                  );
+
+                  if (
+                    pago === "Efectivo" ||
+                    pago === "Tarjeta debito/credito"
+                  ) {
+                    pagoTotal =
+                      hamsimp * cantidad +
+                      pizfam * cantidad +
+                      fidpol * cantidad;
+                    alert(
+                      `El precio seria ${
+                        pagoTotal + domicilio
+                      } pesos mas el domicilio. El domicilio se demora de 45 minutos a 1 hora.\nMuchas gracias por comprar`
+                    );
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 */
