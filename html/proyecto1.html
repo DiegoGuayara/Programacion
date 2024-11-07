@@ -9,12 +9,17 @@
       <h5>MICROBLOG</h5>
       <div>
         <p>Other Themes</p>
-        <button>GitHub</button>
+        <a href="https://github.com/" target="_blank">
+          <button>GitHub</button>
+        </a>
       </div>
     </header>
 
     <div id="principio">
-      <h1>A simple blog built with <br> Astro and Tailwind CSS</h1>
+      <h1>
+        A simple blog built with <br />
+        Astro and Tailwind CSS
+      </h1>
 
       <nav>
         <ul>
@@ -126,9 +131,10 @@
 
       <form>
         <div>
-          <input type="text" placeholder="Enter your email..." />
-          <button>Subscribe ➡</button>
+          <input type="email" placeholder="Enter your email..." id="email" />
+          <button id="subscribe" type="button">Subscribe ➡</button>
         </div>
+        <div id="cont"></div>
       </form>
     </section>
 
@@ -141,5 +147,39 @@
         built with Astro & Tailwind. Crafted in Åland Islands, Finland.
       </p>
     </footer>
+
+    <script>
+      let subscribe = document.getElementById("subscribe");
+      let email = document.getElementById("email");
+
+      subscribe.addEventListener("click", email2);
+      email.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          email2();
+        }
+      });
+
+      function ingemail(x) {
+        let mensajeemail = document.getElementById("mensajeemail");
+        if (mensajeemail) {
+          mensajeemail.remove();
+        }
+
+        const p = document.createElement("p");
+        p.id = "mensajeemail";
+        p.textContent = x;
+
+        document.getElementById("cont").appendChild(p);
+      }
+
+      function email2() {
+        if (email.value === "" || !email.value.includes("@")) {
+          ingemail("Ingrese su email");
+        } else if (email.value.includes("@")) {
+          ingemail("Ya estas suscrito");
+        }
+      }
+    </script>
   </body>
 </html>

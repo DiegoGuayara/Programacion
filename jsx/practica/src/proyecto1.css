@@ -8,7 +8,7 @@ header {
   align-items: center;
   margin-top: 1rem;
 }
-header > h5 {
+header>h5{
   margin-left: 12rem;
 }
 
@@ -18,7 +18,7 @@ header > div {
   margin-right: 11rem;
 }
 
-header > div > a > button {
+header > div > button {
   border-radius: 1rem;
   background-color: black;
   color: white;
@@ -27,11 +27,6 @@ header > div > a > button {
   padding-right: 10px;
   padding-left: 10px;
   cursor: pointer;
-}
-
-header > div > a {
-  text-decoration: none;
-  color: white;
 }
 
 footer {
@@ -51,11 +46,6 @@ footer > p > a {
 
 section > article > nav > .sep {
   margin-left: 1rem;
-}
-
-form > #cont {
-  color: white;
-  margin-right: 3rem;
 }
 
 #final {
@@ -85,12 +75,6 @@ form > #cont {
   border-radius: 50px;
 }
 
-#final > form > div > input[type="email"] {
-  padding-left: 30px;
-  color: silver;
-  font-size: 17px;
-}
-
 #final > form > div > input::placeholder {
   padding-left: 30px;
   color: silver;
@@ -104,7 +88,7 @@ form > #cont {
   background-color: white;
   border-radius: 50px;
   font-size: 15px;
-  cursor: pointer;
+  cursor:pointer;
 }
 
 #principio > h1 {
@@ -134,6 +118,7 @@ form > #cont {
   gap: 10rem;
   margin: 12rem;
   margin-top: 4rem;
+  
 }
 
 #parte1 > article > img {
