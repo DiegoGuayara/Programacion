@@ -61,6 +61,6 @@ function email2() {
   if ($("#email").val() === "" || !$("#email").val().includes("@")) {
     ingemail("Ingrese su email");
   } else if ($("#email").val().includes("@gmail.com")) {
-    ingemail("Ya está suscrito  ");
+    ingemail("Ya está suscrito");
   }
 }
