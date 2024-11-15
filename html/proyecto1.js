@@ -51,16 +51,16 @@ function ingemail(x) {
   }
 
   const p = $("<p></p>");
-  p.attr('id', 'mensajeemail')
+  p.attr("id", "mensajeemail");
   p.text(x);
 
   $("#cont").append(p);
 }
 
 function email2() {
-  if($('#email').val() === '' || !$('#email').val().includes('@')) {
-    ingemail('Ingrese su email')
-  }else if($('#email').val().includes('@gmail.com') ){
-    ingemail('Ya está suscrito  ')
+  if ($("#email").val() === "" || !$("#email").val().includes("@")) {
+    ingemail("Ingrese su email");
+  } else if ($("#email").val().includes("@gmail.com")) {
+    ingemail("Ya está suscrito  ");
   }
 }
