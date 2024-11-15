@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="proyecto1.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <header>
@@ -148,38 +149,6 @@
       </p>
     </footer>
 
-    <script>
-      let subscribe = document.getElementById("subscribe");
-      let email = document.getElementById("email");
-
-      subscribe.addEventListener("click", email2);
-      email.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-          event.preventDefault();
-          email2();
-        }
-      });
-
-      function ingemail(x) {
-        let mensajeemail = document.getElementById("mensajeemail");
-        if (mensajeemail) {
-          mensajeemail.remove();
-        }
-
-        const p = document.createElement("p");
-        p.id = "mensajeemail";
-        p.textContent = x;
-
-        document.getElementById("cont").appendChild(p);
-      }
-
-      function email2() {
-        if (email.value === "" || !email.value.includes("@")) {
-          ingemail("Ingrese su email");
-        } else if (email.value.includes("@")) {
-          ingemail("Ya estas suscrito");
-        }
-      }
-    </script>
+    <script src="proyecto1.js"></script>
   </body>
 </html>

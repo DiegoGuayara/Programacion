@@ -66,7 +66,7 @@ try {
 */
 
 //Ejercicio 4
-/*function suma(x, y) {
+function suma(x, y) {
   x = parseFloat(x);
   y = parseFloat(y);
 
@@ -78,11 +78,10 @@ try {
 }
 
 try {
-  console.log(suma('4', 6));
+  console.log(suma("4", 6));
 } catch (error) {
   console.error("Error:", error.message);
 }
-*/
 
 //Ejercicio 5
 
