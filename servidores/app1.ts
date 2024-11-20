@@ -1,11 +1,15 @@
 import express, { Request, Response } from "express";
-import dotenv from "dotenv";
-dotenv.config();
+const PORT = 10101;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post("/", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
+  let saludo = [{ saludo: "Hola" }];
+  res.json(saludo);
+});
+
+app.post("/register", (req: Request, res: Response) => {
   let nombre = req.body.nombre;
   let apellido = req.body.apellido;
 
@@ -15,8 +19,6 @@ app.post("/", (req: Request, res: Response) => {
     apellido: apellido,
   });
 });
-
-const PORT = process.env.PORT || 10101;
 
 app
   .listen(PORT, () => {

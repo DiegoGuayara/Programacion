@@ -4,12 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
+const PORT = 10101;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.post("/", (req, res) => {
+app.get("/", (req, res) => {
+    let saludo = [{ saludo: "Hola" }];
+    res.json(saludo);
+});
+app.post("/register", (req, res) => {
     let nombre = req.body.nombre;
     let apellido = req.body.apellido;
     return res.status(200).json({
@@ -18,7 +21,6 @@ app.post("/", (req, res) => {
         apellido: apellido,
     });
 });
-const PORT = process.env.PORT || 10101;
 app
     .listen(PORT, () => {
     console.log("Servidor ejecutándose en el puerto: ", PORT);
