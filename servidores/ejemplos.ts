@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
-import pool from "./pool.js";
 import { ResultSetHeader } from "mysql2";
+import poolPromise from "./pool";
 
 const PORT = 10101;
 const app = express();
@@ -56,6 +56,14 @@ app.post("/register2", async (req: Request, res: Response) => {
   let apellido = req.body.apellido;
 
   try {
+    const pool = await poolPromise;
+
+    if (!pool) {
+      throw new Error(
+        "No se pudo establecer la conexión con la base de datos."
+      );
+    }
+
     const [result] = await pool.query<ResultSetHeader>(
       "INSERT INTO usuarios (nombre, apellido) VALUES (?, ?)",
       [nombre, apellido]

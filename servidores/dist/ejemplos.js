@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const pool_js_1 = __importDefault(require("./pool.js"));
+const pool_1 = __importDefault(require("./pool"));
 const PORT = 10101;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
@@ -59,7 +59,11 @@ app.post("/register2", (req, res) => __awaiter(void 0, void 0, void 0, function*
     let nombre = req.body.nombre;
     let apellido = req.body.apellido;
     try {
-        const [result] = yield pool_js_1.default.query("INSERT INTO usuarios (nombre, apellido) VALUES (?, ?)", [nombre, apellido]);
+        const pool = yield pool_1.default;
+        if (!pool) {
+            throw new Error("No se pudo establecer la conexión con la base de datos.");
+        }
+        const [result] = yield pool.query("INSERT INTO usuarios (nombre, apellido) VALUES (?, ?)", [nombre, apellido]);
         res.status(200).json({
             status: "Registrado",
             id: result.insertId,
