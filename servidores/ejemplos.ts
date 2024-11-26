@@ -55,6 +55,9 @@ app.post("/register2", async (req: Request, res: Response) => {
   let nombre = req.body.nombre;
   let apellido = req.body.apellido;
 
+  console.log('----', nombre, apellido);
+  
+
   try {
     const pool = await poolPromise;
 

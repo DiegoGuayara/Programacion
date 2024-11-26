@@ -58,6 +58,7 @@ app.post("/register", (req, res) => {
 app.post("/register2", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let nombre = req.body.nombre;
     let apellido = req.body.apellido;
+    console.log('----', nombre, apellido);
     try {
         const pool = yield pool_1.default;
         if (!pool) {
