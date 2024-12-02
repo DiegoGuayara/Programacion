@@ -12,7 +12,7 @@ let promesa1 = (t: number) => {
       if (bool) {
         resolve("Promesa 1 resuelta");
       } else {
-        reject("Fallo de ejecucion");
+        reject("Fallo de ejecucion de la promesa 1");
       }
     }, t);
   });
@@ -21,12 +21,12 @@ let promesa1 = (t: number) => {
 let promesa2 = (t: number) => {
   return new Promise<string>((resolve, reject) => {
     setTimeout(() => {
-      let bool: boolean = true;
+      let bool: boolean = false;
 
       if (bool) {
         resolve("Promesa 2 resuelta");
       } else {
-        reject("Fallo de ejecucion");
+        reject("Fallo de ejecucion de la promesa 2");
       }
     }, t);
   });
@@ -40,7 +40,7 @@ let promesa3 = (t: number) => {
       if (bool) {
         resolve("Promesa 3 resuelta");
       } else {
-        reject("Fallo de ejecucion");
+        reject("Fallo de ejecucion de la promesa 3");
       }
     }, t);
   });
@@ -65,7 +65,7 @@ app.get("/all", async (req: Request, res: Response) => {
     });
   } catch (error) {
     res.status(500).json({
-      mensaje: `Hubo un fallo al obtener los datos`,
+      mensaje: error,
     });
   }
 });
@@ -83,7 +83,7 @@ app.get("/race", async (req: Request, res: Response) => {
     });
   } catch (error) {
     res.status(500).json({
-      mensaje: `Hubo un fallo al obtener los datos`,
+      mensaje: error,
     });
   }
 });
@@ -100,7 +100,7 @@ app.post("/race2", async (req: Request, res: Response) => {
     });
   } catch (error) {
     res.status(500).json({
-      mensaje: `Hubo un fallo al obtener los datos`,
+      mensaje: error,
     });
   }
 });
