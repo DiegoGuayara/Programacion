@@ -7,7 +7,7 @@ app.use(express.json());
 let promesa1 = (t: number) => {
   return new Promise<string>((resolve, reject) => {
     setTimeout(() => {
-      let bool: boolean = true;
+      let bool: boolean = false;
 
       if (bool) {
         resolve("Promesa 1 resuelta");
@@ -35,7 +35,7 @@ let promesa2 = (t: number) => {
 let promesa3 = (t: number) => {
   return new Promise<string>((resolve, reject) => {
     setTimeout(() => {
-      let bool: boolean = true;
+      let bool: boolean = false;
 
       if (bool) {
         resolve("Promesa 3 resuelta");
@@ -46,7 +46,16 @@ let promesa3 = (t: number) => {
   });
 };
 
-app.get("", (req: Request, res: Response) => {
+const acPromesas = async (promise: Promise<string>) => {
+  try {
+    const valor = await promise;
+    return { status: "resolved", valor };
+  } catch (error) {
+    return { status: "rejected", error };
+  }
+};
+
+app.get("/", (req: Request, res: Response) => {
   res.json({
     saludo: "Hola",
   });
@@ -66,6 +75,30 @@ app.get("/all", async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({
       mensaje: error,
+    });
+  }
+});
+
+app.get("/all2", async (req: Request, res: Response) => {
+  try {
+    const result = await Promise.all([
+      acPromesas(promesa1(1000)),
+      acPromesas(promesa2(1100)),
+      acPromesas(promesa3(1200)),
+    ]);
+
+    const promesasResueltas = result.filter((x) => x.status === "resolved");
+    const promesasRechazadas = result.filter((x) => x.status === "rejected");
+
+    res.json({
+      mensaje: "Operaciones completadas parcialmente",
+      promesas_cumplidas: promesasResueltas.map((x) => x.valor),
+      promesas_fallidas: promesasRechazadas.map((x) => x.error),
+    });
+  } catch (error) {
+    res.status(500).json({
+      mensaje: "Error inesperado",
+      error,
     });
   }
 });
