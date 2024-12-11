@@ -19,7 +19,7 @@ app.use(express_1.default.json());
 let promesa1 = (t) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let bool = false;
+            let bool = true;
             if (bool) {
                 resolve("Promesa 1 resuelta");
             }
@@ -32,7 +32,7 @@ let promesa1 = (t) => {
 let promesa2 = (t) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let bool = false;
+            let bool = true;
             if (bool) {
                 resolve("Promesa 2 resuelta");
             }
@@ -45,7 +45,7 @@ let promesa2 = (t) => {
 let promesa3 = (t) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let bool = false;
+            let bool = true;
             if (bool) {
                 resolve("Promesa 3 resuelta");
             }

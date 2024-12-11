@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans&display=swap');
+
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -36,6 +38,10 @@ a {
 h1,
 #textoTit {
   text-align: center;
+}
+
+#tituloP{
+  font-family: 'Parkinsans', sans-serif;
 }
 
 #education > ul {
