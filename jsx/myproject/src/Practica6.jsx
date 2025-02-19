@@ -1,34 +1,3 @@
-// import { useState } from "react";
-
-// function Practica6() {
-//   const [color, setColor] = useState("white");
-
-//   return (
-//     <div>
-//       <h2>Escribe el color que quieres</h2>
-//       <input
-//         type="text"
-//         value={color}
-//         onChange={(e) => setColor(e.target.value)}
-//       />
-//       <p style={{ fontSize: "20px", color: color }}>
-//         El color actual es: {color}
-//       </p>
-//       <div
-//         style={{
-//           backgroundColor: color,
-//           height: "100px",
-//           width: "100px",
-//           border: "2px black solid",
-//         }}
-//       ></div>
-//     </div>
-//   );
-// }
-
-// export default Practica6;
-
-
 import { useState } from "react";
 
 function CambiarColor() {
