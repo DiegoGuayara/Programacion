@@ -28,6 +28,8 @@ input {
   height: 35px;
   transition: 0.5s;
   padding-left: 40px;
+  border: none;
+  border-radius: 20px;
 }
 
 input::placeholder {
@@ -97,6 +99,7 @@ input:focus::placeholder {
   color: white;
   cursor: pointer;
   transition: 0.5s;
+  border-radius: 20px;
 }
 
 #login:hover {
