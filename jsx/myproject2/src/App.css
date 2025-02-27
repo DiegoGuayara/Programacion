@@ -1,42 +1,83 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+* {
+  font-family: "Noto Sans TC", serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(167, 3, 3),
+    rgb(104, 24, 80) 50%
+  );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  gap: 10px;
 }
 
-.card {
-  padding: 2em;
+h1 {
+  align-self: center;
 }
 
-.read-the-docs {
-  color: #888;
+input {
+  align-self: center;
+  width: 250px;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+input::placeholder{
+  font-size: 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+a {
+  align-self: center;
+  color: black;
+}
+
+a:hover{
+  color: blue;
+}
+
+button {
+  align-self: center;
+  width: 200px;
+  height: 50px;
+  margin-top: 10px;
+  border: none;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(212, 73, 73),
+    rgb(161, 38, 124)
+  );
+  cursor: pointer;
+}
+
+button:active{
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(101, 13, 13),
+    rgb(84, 13, 63)
+  );
+  color: white;
+}
+
+p{
+  align-self: center;
 }

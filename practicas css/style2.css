@@ -11,7 +11,7 @@ body{
     align-items: center;
 }
 
-main{
+form{
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -40,6 +40,10 @@ input::placeholder{
 
 input:focus::placeholder{
     color: transparent;
+}
+
+input:focus {
+    outline: none;
 }
 
 a{
