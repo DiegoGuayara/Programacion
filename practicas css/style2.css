@@ -11,7 +11,7 @@ body{
     align-items: center;
 }
 
-form{
+main{
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -64,4 +64,9 @@ button{
 
 button:active{
     background-image: linear-gradient(to right bottom, rgb(160, 56, 56), rgb(82, 26, 65));
+}
+
+#cont {
+    display: flex;
+    justify-content: center;
 }

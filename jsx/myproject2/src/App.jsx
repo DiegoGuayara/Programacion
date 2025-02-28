@@ -10,10 +10,7 @@ function App() {
 
   function nombreUser() {
     if (textoUser === "") setMensaje("Ingrese su nombre de usuario por favor");
-    else setMensaje(`Bienvenido ${textoUser}`);
-  }
-
-  function clavePassword() {
+    else setMensaje("");
     if (password === "") setMensaje2("Ingrese la contraseña por favor");
     else setMensaje2("Contraseña ingresada");
   }
@@ -30,18 +27,18 @@ function App() {
         />
         {mensaje && <p id="mens1">{mensaje}</p>}
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
         {mensaje2 && <p id="mens2">{mensaje2}</p>}
         <a href="#">Forgot your Password?</a>
         <button
           onClick={() => {
             nombreUser();
-            clavePassword();
           }}
         >
           Login
