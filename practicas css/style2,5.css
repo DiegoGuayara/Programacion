@@ -124,3 +124,8 @@ input:focus::placeholder {
   border: none;
   cursor: pointer;
 }
+
+#cont{
+  display: flex;
+  justify-content: center;
+}
