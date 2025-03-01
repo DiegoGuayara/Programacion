@@ -13,11 +13,16 @@ login.addEventListener('click', ()=>{
         let p = document.createElement('p')
         p.id = 'mensaje'
         p.style.fontSize = '10px'
-        p.innerText = usuario.value == "" && password.value !== '' ? 'Ingresa usuario' 
-        : password.value == "" && usuario.value !== '' ? 'Ingresa la contraseña' 
-        : usuario.value == "" && password.value == "" ? 
-        'Ingrese el usuario y la contraseña' 
-        : 'Bienvenido'
+        
+        if (usuario.value === "" && password.value === "") {
+            p.innerText = 'Ingrese el usuario y la contraseña'
+        } else if (usuario.value === "") {
+            p.innerText = 'Ingresa usuario'
+        } else if (password.value === "") {
+            p.innerText = 'Ingresa la contraseña'
+        } else {
+            p.innerText = 'Bienvenido'
+        }
     
         cont.appendChild(p)
     }
