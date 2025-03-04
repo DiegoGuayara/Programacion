@@ -58,7 +58,7 @@ function mensajePart2() {
     part2.style.display = "none";
     part3.style.display = 'flex'
     setTimeout(() => {
-      window.location.href = 'index2.html'
+      window.close()
     }, 3000)
   }
 
