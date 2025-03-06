@@ -24,7 +24,7 @@ function mensajePart1() {
     mensaje1.remove();
   }
 
-  let p = document.createElement("p");  
+  let p = document.createElement("p");
   p.id = "mensaje1";
 
   if (!emailRegex.test(email.value)) {
@@ -56,10 +56,10 @@ function mensajePart2() {
     p2.innerText = "Las contraseñas no coinciden";
   } else {
     part2.style.display = "none";
-    part3.style.display = 'flex'
+    part3.style.display = "flex";
     setTimeout(() => {
-      window.close()
-    }, 3000)
+      window.close();
+    }, 3000);
   }
 
   cont2.appendChild(p2);

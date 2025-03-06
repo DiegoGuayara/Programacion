@@ -125,12 +125,13 @@ input:focus::placeholder {
   cursor: pointer;
 }
 
-#cont, #cont2{
+#cont,
+#cont2 {
   display: flex;
   justify-content: center;
 }
 
-#part3{
+#part3 {
   display: none;
   flex-direction: column;
   justify-content: center;
