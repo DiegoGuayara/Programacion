@@ -17,6 +17,25 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 continuar.addEventListener("click", mensajePart1);
 change.addEventListener("click", mensajePart2);
+email.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    mensajePart1();
+  }
+});
+
+npassword.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    mensajePart2();
+  }
+});
+confnpassword.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    mensajePart2();
+  }
+});
 
 function mensajePart1() {
   const mensaje1 = document.getElementById("mensaje1");
