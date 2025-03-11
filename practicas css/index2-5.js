@@ -1,6 +1,7 @@
 const part1 = document.getElementById("part1");
 const part2 = document.getElementById("part2");
 const part3 = document.getElementById("part3");
+const part4 = document.getElementById("part4");
 
 const email = document.getElementById("email");
 const npassword = document.getElementById("npassword");
