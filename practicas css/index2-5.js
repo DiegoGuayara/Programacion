@@ -1,6 +1,7 @@
 const part1 = document.getElementById("part1");
 const part2 = document.getElementById("part2");
 const part3 = document.getElementById("part3");
+const part4 = document.getElementById("part4");
 
 const email = document.getElementById("email");
 const npassword = document.getElementById("npassword");
@@ -24,11 +25,18 @@ function mensajePart1() {
     mensaje1.remove();
   }
 
-  let p = document.createElement("p");  
+  let p = document.createElement("p");
   p.id = "mensaje1";
 
   if (!emailRegex.test(email.value)) {
     p.innerText = "Ingrese un correo valido";
+    setTimeout(() => {
+      part1.style.display = "none";
+      part4.style.display = "flex";
+      setTimeout(() => {
+        window.close();
+      }, 3000);
+    }, 10000);
   } else {
     p.innerText = "Redirigiendo";
     setTimeout(() => {
@@ -52,14 +60,28 @@ function mensajePart2() {
 
   if (npassword.value === "" || confnpassword.value === "") {
     p2.innerText = "Ingrese y confirme la nueva contraseña";
+    setTimeout(() => {
+      part2.style.display = "none";
+      part4.style.display = "flex";
+      setTimeout(() => {
+        window.close();
+      }, 3000);
+    }, 10000);
   } else if (npassword.value !== confnpassword.value) {
     p2.innerText = "Las contraseñas no coinciden";
+    setTimeout(() => {
+      part2.style.display = "none";
+      part4.style.display = "flex";
+      setTimeout(() => {
+        window.close();
+      }, 3000);
+    }, 10000);
   } else {
     part2.style.display = "none";
-    part3.style.display = 'flex'
+    part3.style.display = "flex";
     setTimeout(() => {
-      window.close()
-    }, 3000)
+      window.close();
+    }, 3000);
   }
 
   cont2.appendChild(p2);
