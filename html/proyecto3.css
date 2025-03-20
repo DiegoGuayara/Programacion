@@ -1,0 +1,12 @@
+*{
+    margin-left: 4rem;
+    margin-right: 5rem;
+}
+
+header>img{
+    width: 2rem;
+}
+
+table>tbody>tr>td{
+    border-bottom: 1px solid black;
+}

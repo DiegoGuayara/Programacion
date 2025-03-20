@@ -1,0 +1,39 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(270deg, grey 50%, red);
+}
+
+#datos {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#datos .titulos {
+  transition: 0.5s;
+}
+#datos .titulos:hover {
+  text-shadow: 5px 5px 10px #ff0000;
+}
+
+#load,
+#refresh {
+  border-radius: 10px;
+  width: 5rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+#load:hover,
+#refresh:hover {
+  box-shadow: 5px 5px 15px rgb(61, 27, 117);
+  background-image: linear-gradient(blue, darkblue);
+  color: azure;
+}
+
+#botonLoad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
