@@ -1,0 +1,21 @@
+{
+  "name": "servidores",
+  "version": "1.0.0",
+  "main": "app1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.4"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "typescript": "^5.6.3"
+  }
+}
