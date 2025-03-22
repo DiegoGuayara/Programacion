@@ -1,0 +1,33 @@
+body {
+  background-color: darkslategray;
+}
+
+h1 {
+  font-family: sans-serif;
+  color: aqua;
+}
+
+label {
+  font-family: sans-serif;
+  color: white;
+}
+
+button {
+  background: lightblue;
+  border-radius: 10px;
+  padding: 0.5rem;
+  cursor:pointer;
+}
+
+input {
+  background: grey;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+fieldset{
+  width: 25rem;
+  border-radius: 12px;
+  border-color: black;
+  border-width: 0.5rem;
+}

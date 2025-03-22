@@ -1,0 +1,130 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+header {
+  margin: 0px;
+  padding: 15px 15px 15px 30px;
+  /* margin-left: 40px; */
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: rgba(26, 26, 26, 255);
+  border-bottom: 2px solid white;
+}
+
+main {
+  background-image: url("images/line-grid-black-and-white-for-interior-background-grid-walls-simple-minimal-grid-line-background-seamless-grid-pattern-free-pattern-free-vector.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 20px);
+}
+ul {
+  list-style: none;
+  background-color: rgb(77, 77, 77);
+}
+
+ul > li > button {
+  margin-top: 10px;
+  width: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+img {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  right: 38px;
+}
+
+#contenido {
+  position: relative;
+  top: 150px;
+  margin-right: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-list2 {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  left: -45px;
+}
+
+#list1 {
+  position: relative;
+  right: 340px;
+  bottom: 5px;
+  margin-right: 25px;
+  padding-right: 15px;
+  height: 260px;
+  width: 5px;
+  border-radius: 50px;
+}
+
+#cont-list1 {
+  position: relative;
+  right: 271px;
+  bottom: 2px;
+  width: 80px;
+  height: 280px;
+  background-color: rgb(36, 36, 36);
+  border-radius: 50px;
+}
+
+#list2 {
+  position: relative;
+  left: 315px;
+  width: 10px;
+  border-radius: 50px;
+}
+
+#cont-list2 {
+  position: relative;
+  left: 378px;
+  bottom: 2px;
+  width: 80px;
+  height: 324px;
+  background-color: rgb(36, 36, 36);
+  border-radius: 50px;
+}
+
+#sol {
+  background-color: grey;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(44, 43, 43);
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+#sol > img {
+  position: relative;
+  left: 1px;
+  top: 1px;
+
+}
+
+#cont-log {
+  display: flex;
+  gap: 10px;
+}
+
+#cont-log > h1 {
+  margin-top: 43px;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  border: 10px solid white;
+  border-radius: 100px;
+}

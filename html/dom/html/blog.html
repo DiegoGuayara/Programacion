@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/blog.css" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <div class="box"></div>
+    <section>
+      <h1 style="text-align: center" id="titprincipal">DOM</h1>
+      <div style="text-align: center">
+        <img src="../imagenes/dom.jpg" id="img1" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Indice</h2>
+      <ol>
+        <li>
+          <a href="#DOM">¿Que es el dom?</a>
+        </li>
+
+        <li>
+          <a href="#prg1">¿Es util utilizar el DOM?</a>
+        </li>
+
+        <li>
+          <a href="#prg2">¿Por qué es útil utilizar el DOM?</a>
+        </li>
+
+        <li>
+          <a href="#sel">Seleccion de elementos</a>
+          <ul>
+            <li>
+              <a href="#at1">getElementById</a>
+            </li>
+
+            <li>
+              <a href="#at2">querySelector</a>
+            </li>
+
+            <li>
+              <a href="#at3">querySelectorAll</a>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <a name="DOM"></a>
+      <h1><br />¿Que es el DOM?</h1>
+
+      <p>
+        DOM significa Document Object Model, en español sería Modelo de Objetos
+        del Documento. Es una interfaz de programación que nos permite crear,
+        cambiar, o remover elementos del documento También podemos agregar
+        eventos a esos elementos para hacer más dinámica nuestra página.
+      </p>
+
+      <p>
+        Nuestro documento se llama nodo raíz y contiene un nodo hijo el cual es
+        el elemento <strong>html</strong>. El elemento
+        <strong>html</strong> contiene dos hijos los cuales son los elementos
+        <strong>head</strong> y <strong>body</strong>.
+      </p>
+
+      <p>
+        El DOM visualiza el documento de HTML como un árbol de tres nodos. Un
+        nodo representa un documento de HTML.
+      </p>
+
+      <div style="text-align: center">
+        <img src="../imagenes/Document.jpg" id="img2" />
+      </div>
+    </section>
+
+    <section>
+      <a name="prg1"></a>
+      <h3>¿Es util utilizar el DOM?</h3>
+      <p>
+        El DOM (Document Object Model) es extremadamente útil y esencial en el
+        desarrollo web! Es la interfaz de programación que permite a los
+        desarrolladores interactuar con los documentos HTML y XML de una manera
+        estructurada y programática.
+      </p>
+
+      <a name="prg2"></a>
+      <h3>¿Por qué es útil utilizar el DOM?</h3>
+      <ol>
+        <li>
+          <p><strong>Interactividad dinámica</strong></p>
+
+          <ul>
+            <li>
+              El DOM te permite hacer que una página web sea interactiva y
+              responda a las acciones del usuario. Puedes agregar, eliminar o
+              modificar elementos en la página en respuesta a eventos como
+              clics, desplazamientos o entradas del usuario.
+            </li>
+            <li>
+              Ejemplo: Mostrar u ocultar un menú cuando el usuario hace clic en
+              un botón.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <p><strong>Manipulación de Contenidos</strong></p>
+          <ul>
+            <li>
+              Puedes modificar el contenido de un documento sin tener que
+              recargar la página. Esto es clave para aplicaciones web dinámicas,
+              donde los datos se actualizan en tiempo real.
+            </li>
+            <li>
+              Ejemplo: Cambiar el texto de un párrafo o el valor de un campo de
+              formulario en función de una acción del usuario.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <p><strong>Modificación de la Estructura del Documento</strong></p>
+          <ul>
+            <li>
+              Puedes añadir o eliminar elementos HTML (como div, p, img, etc.)
+              de la página dinámicamente. Esto te permite crear interfaces más
+              complejas y personalizadas.
+            </li>
+            <li>
+              Ejemplo: Crear un nuevo elemento de lista y agregarlo a un menú
+              desplegable basado en una acción del usuario.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <p><strong>Acceso y Manipulación de Estilos (CSS)</strong></p>
+          <ul>
+            <li>
+              El DOM también te permite acceder y modificar los estilos de los
+              elementos de la página, lo que te brinda la capacidad de cambiar
+              la apariencia de los elementos de manera dinámica.
+            </li>
+            <li>
+              Ejemplo: Cambiar el color de un botón cuando el usuario pasa el
+              mouse por encima o cambiar la visibilidad de un elemento.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <p><strong>Eventos y Control de Flujo</strong></p>
+          <ul>
+            <li>
+              Puedes capturar y manejar eventos del usuario (como clics, teclas
+              presionadas, movimientos del mouse, etc.) a través del DOM. Esto
+              es fundamental para crear experiencias de usuario interactivas y
+              dinámicas.
+            </li>
+            <li>
+              Ejemplo: Ejecutar una función cuando se envía un formulario o se
+              selecciona un ítem de un menú.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <p><strong>Aplicaciones Web Modernas</strong></p>
+          <ul>
+            <li>
+              El DOM es la base para tecnologías modernas como React, Vue, y
+              Angular, que dependen del DOM para renderizar dinámicamente los
+              componentes y gestionar los estados de las aplicaciones. Aunque
+              algunas de estas librerías y frameworks abstraen la manipulación
+              directa del DOM, el conocimiento del DOM sigue siendo crucial.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <p><strong>Integración con APIs del Navegador</strong></p>
+          <ul>
+            <li>
+              Muchas APIs del navegador están diseñadas para interactuar con el
+              DOM. Por ejemplo, la API de geolocalización puede usarse para
+              mostrar la ubicación del usuario en el DOM, o la API de
+              almacenamiento local puede interactuar con el DOM para mostrar
+              datos almacenados localmente.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <a name="sel"></a>
+      <h2><br />Como seleccionar elementos en el documento</h2>
+      <p>
+        Hay diferentes métodos para seleccionar un elemento en el documento de
+        HTML.
+      </p>
+      <p>De los cuales solo nos enfocaremos en 3 metodos, que son:</p>
+      <ol>
+        <li>getElementById</li>
+        <li>querySelector</li>
+        <li>querySelectorAll</li>
+      </ol>
+    </section>
+
+    <section>
+      <a name="at1"></a>
+      <h3><br />1. getElementById</h3>
+      <img src="../imagenes/maxresdefault.jpg" width="300px" />
+
+      <p>
+        En HTML, los ids se utilizan como identificadores únicos para los
+        elementos HTML. Esto significa que no podemos tener el mismo nombre de
+        id para dos elementos diferentes. <br />
+        El método getElementById permite, como su nombre indica, seleccionar un
+        elemento del documento por medio del valor del atributo id que se le
+        haya asignado.
+      </p>
+    </section>
+
+    <section>
+      <a name="at2"></a>
+      <h3><br />2. querySelector</h3>
+      <img src="../imagenes/descarga (2).png" width="300px" />
+      <p>
+        querySelector te permite selecionar elementos del DOM mediante a
+        queries, es decir, si usas . seleccionas por clase, si usas # por id, si
+        usas [] por nombre de atributos, y así sucesivamente, puedes buscar los
+        diferentes selectores disponibles pero es el equivalente al $ de jQuery
+      </p>
+    </section>
+
+    <section>
+      <a name="at3"></a>
+      <h3><br />3. querySelectorAll</h3>
+      <img src="../imagenes/descarga (3).png" alt="wedw" width="300px" />
+      <p>
+        Este método encuentra todos los elementos que coinciden con el selector
+        de CSS y devuelve una lista de todos esos nodos. Si quisiera encontrar
+        todos los elementos en nuestro ejemplo, podría utilizar el combinador de
+        hijos > para encontrar a todos los elementos hijos de
+        <strong>ul</strong>.
+      </p>
+    </section>
+
+    <section>
+      <div style="text-align: center">
+        <a href="./ejerciciosBlog.html" target="_blank">
+          <button>Ejercicios</button>
+        </a>
+
+        <a download href="blog.html">
+          <button style="height: fit-content">Descargar este archivo</button>
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
