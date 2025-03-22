@@ -1,3 +1,0 @@
-$("#myButton").click(() => {
-  alert("hola");
-});
