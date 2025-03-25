@@ -68,8 +68,18 @@ h2 {
 
 #paleta-colores {
   position: absolute;
-  display: none;
+  display: flex;  /* Se manejará con opacity en lugar de display */
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(-10px); /* Lo mueve hacia arriba al ocultarse */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Evita que se pueda interactuar cuando está oculto */
+}
+
+#paleta-colores.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 #cont-opciones {
@@ -88,7 +98,6 @@ h2 {
 }
 
 #cont-opciones2A {
-  display: none;
   position: absolute;
   right: -60px;
   bottom: 90px;
@@ -97,6 +106,16 @@ h2 {
   width: 500px;
   background-color: rgb(36, 34, 34);
   border-radius: 30px;
+  opacity: 0;
+  transform: translateY(-10px); /* Lo mueve hacia arriba al ocultarse */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Evita que se pueda interactuar cuando está oculto */
+}
+
+#cont-opciones2A.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 #colores-principales {
@@ -111,6 +130,7 @@ h2 {
   border-radius: 10px;
   gap: 10px;
 }
+
 
 #camiseta {
   position: relative;
