@@ -4,36 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const zod_1 = require("zod");
-const loginSchema = zod_1.z.object({
-    email: zod_1.z.string().email({
-        message: "Write a correct email",
-    }),
-    password: zod_1.z
-        .string()
-        .nonempty("Password is required")
-        .min(6, "Password too short"),
-});
+const auth_routes_1 = __importDefault(require("./routes/auth.routes"));
+const products_routes_1 = __importDefault(require("./routes/products.routes"));
 const port = 3000;
 const App = (0, express_1.default)();
 App.use(express_1.default.json());
-App.post("/", (req, res) => {
-    try {
-        const result = loginSchema.parse(req.body);
-        console.log(result);
-        res.send("Login");
-    }
-    catch (error) {
-        if (error instanceof zod_1.ZodError) {
-            res
-                .status(400)
-                .json(error.issues.map((issue) => ({ message: issue.message })));
-        }
-        res.status(500).json({
-            message: "Internal server error",
-        });
-    }
-});
+App.use(auth_routes_1.default);
+App.use(products_routes_1.default);
 App.listen(port, () => {
     console.log(`Escuchando el puerto ${port}`);
 });
