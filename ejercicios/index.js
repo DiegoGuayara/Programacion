@@ -1,5 +1,14 @@
 const consultar = document.getElementById("consultar");
 const cont = document.getElementById("cont");
+const emoji = document.getElementById("emoji");
+
+emoji.addEventListener('mouseover', ()=> {
+  emoji.textContent = '🤑'
+})
+
+emoji.addEventListener('mouseout', ()=> {
+  emoji.textContent = '💰'
+})
 
 consultar.addEventListener("click", estimacion);
 
@@ -29,6 +38,8 @@ function estimacion() {
   let p3 = document.createElement("p");
   p3.id = "mensaje3";
 
+  p1.textContent = '🎚️ '
+
   let funcionalidad = parseFloat(
     prompt("Que complejidad tiene su funcionalidad")
   );
@@ -41,11 +52,11 @@ function estimacion() {
   }
 
   if (funcionalidad <= 5) {
-    p1.textContent = "Complejidad Funcionalidad: Baja";
+    p1.textContent += "Complejidad Funcionalidad: Baja";
   } else if (funcionalidad > 5 && funcionalidad <= 10) {
-    p1.textContent = "Complejidad Funcionalidad: Media";
+    p1.textContent += "Complejidad Funcionalidad: Media";
   } else if (funcionalidad > 10 && funcionalidad <= 15) {
-    p1.textContent = "Complejidad Funcionalidad: Alta";
+    p1.textContent += "Complejidad Funcionalidad: Alta";
   }
   cont.appendChild(p1);
 
@@ -58,7 +69,7 @@ function estimacion() {
 
   let saldo = 8 * 30 * dias;
   
-  p2.textContent = `⌛ Tiempo Estimado: ${dias} dias (${60 * dias} horas)`;
+  p2.textContent = `⌛ Tiempo Estimado: ${dias} dias (${8 * dias} horas)`;
   cont.appendChild(p2);
 
   p3.textContent = `💲 Saldo Establecido: $${saldo} USD.`;
