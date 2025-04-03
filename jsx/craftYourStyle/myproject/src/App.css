@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(90deg, #fff 1px, transparent 1px),
+    linear-gradient(0deg, #fff 1px, transparent 1px);
+  background-color: rgb(19, 19, 19);
+  background-size: 60px 60px; /* Define el tamaño de cada celda de la cuadrícula */
+  background-position: top left;
+}
