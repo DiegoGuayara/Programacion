@@ -2,7 +2,7 @@ import { useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import { Mesh, MeshStandardMaterial } from "three";
 
-export const Model = ({ color }: any) => {
+export const Model:React.FC<{color?:string}> = ({ color = '#ffffff'}) => {
   const { scene } = useGLTF("/models/scene.gltf");
 
   useEffect(() => {

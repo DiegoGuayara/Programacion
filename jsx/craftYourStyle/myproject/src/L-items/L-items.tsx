@@ -1,9 +1,9 @@
 import "./L-items.css";
-import { Paleta } from "../images/svg/Paleta";
-import { Editar } from "../images/svg/Editar";
-import { Opciones } from "../images/svg/Opciones";
-import { Genero } from "../images/svg/Genero";
-import { Camiseta } from "../images/svg/Camiseta";
+import { Paleta } from "../images/svg/L-Items/Paleta";
+import { Editar } from "../images/svg/L-Items/Editar";
+import { Opciones } from "../images/svg/L-Items/Opciones";
+import { Genero } from "../images/svg/L-Items/Genero";
+import { Camiseta } from "../images/svg/L-Items/Camiseta";
 
 export const L_items = () => {
   return (

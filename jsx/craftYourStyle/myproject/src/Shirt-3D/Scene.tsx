@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Model } from "./Model";
 
-export const Scene = ({ color }: any) => {
+export const Scene: React.FC<{ color?: string }> = ({ color = "white" }) => {
   return (
     <div style={{ height: "80vh", width: "90vw" }} className="sceneShirt">
       <Canvas

@@ -1,0 +1,28 @@
+.relleno-cont2{
+    position: relative;
+    height: 450px;
+    width: 100px;
+    background-color: rgb(30, 30, 30);
+    top: 200px;
+    right: 20px;
+    border-radius: 50px;
+}
+
+.cont2{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 10px;
+    background-color: rgb(54, 52, 52);
+    right: 20px;
+    top: 28px;
+    width: 35px;
+    padding-left: 22px;
+    border-radius: 50px;
+    height: 400px;
+    padding-top: 10px;
+}
+
+.buttons-R-items{
+    background: none;
+}
