@@ -4,7 +4,7 @@ import { Model } from "./Model";
 
 export const Scene: React.FC<{ color?: string }> = ({ color = "white" }) => {
   return (
-    <div style={{ height: "80vh", width: "90vw" }} className="sceneShirt">
+    <div className="sceneShirt">
       <Canvas
         camera={{ position: [0, 1.5, 5], fov: 50 }}
         style={{ background: "transparent" }}
@@ -13,11 +13,13 @@ export const Scene: React.FC<{ color?: string }> = ({ color = "white" }) => {
         <directionalLight position={[2, 5, 2]} intensity={1} />
         <Model color={color} />
         <OrbitControls
-          minDistance={2}
-          maxDistance={7}
+          enableZoom={true}
+          minDistance={3}
+          maxDistance={5}
           zoomSpeed={0.7}
-          minPolarAngle={Math.PI / 2}
-          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 4}
+          maxPolarAngle={(3 * Math.PI) / 4}
+          enablePan={false}
         />
       </Canvas>
     </div>

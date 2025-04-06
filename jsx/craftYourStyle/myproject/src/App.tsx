@@ -12,7 +12,7 @@ export const App: React.FC = () => {
       <main className="App">
         <L_items />
         <Scene />
-        <R_Items/>
+        <R_Items />
       </main>
     </div>
   );

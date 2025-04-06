@@ -18,4 +18,5 @@ body {
 
 .App{
   display: flex;
+  justify-content: space-between;
 }
