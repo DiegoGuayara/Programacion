@@ -3,7 +3,6 @@ import { Paleta } from "../images/svg/L-Items/Paleta";
 import { Editar } from "../images/svg/L-Items/Editar";
 import { Opciones } from "../images/svg/L-Items/Opciones";
 import { Genero } from "../images/svg/L-Items/Genero";
-import { GeneroFem } from "../images/svg/L-Items/GeneroFem";
 import { Camiseta } from "../images/svg/L-Items/Camiseta";
 import { Scene } from "../Shirt-3D/Scene";
 import { useState } from "react";
@@ -13,8 +12,6 @@ export const L_items = () => {
   const [menuPaletaisOpen, setmenuPaletaIsOpen] = useState(false);
   const [isEditarOpen, setIsEditarOpen] = useState(false);
   const [isPersonalizarOpen, setIsPersonalizarOpen] = useState(false);
-  const [isGeneroOpen, setIsGeneroOpen] = useState(false);
-  const [isTipoCamisetaOpen, setIsTipoCamisetaOpen] = useState(false);
 
   const handlePaletaClick = () => {
     setmenuPaletaIsOpen(!menuPaletaisOpen);
@@ -22,8 +19,6 @@ export const L_items = () => {
     if (!menuPaletaisOpen) {
       setIsEditarOpen(false);
       setIsPersonalizarOpen(false);
-      setIsGeneroOpen(false);
-      setIsTipoCamisetaOpen(false);
     }
   };
 
@@ -33,8 +28,6 @@ export const L_items = () => {
     if (!isEditarOpen) {
       setmenuPaletaIsOpen(false);
       setIsPersonalizarOpen(false);
-      setIsGeneroOpen(false);
-      setIsTipoCamisetaOpen(false);
     }
   };
 
@@ -43,30 +36,6 @@ export const L_items = () => {
     // Si estamos abriendo el menú personalizar, cerramos los otros
     if (!isPersonalizarOpen) {
       setmenuPaletaIsOpen(false);
-      setIsEditarOpen(false);
-      setIsGeneroOpen(false);
-      setIsTipoCamisetaOpen(false);
-    }
-  };
-
-  const handleGeneroClick = () => {
-    setIsGeneroOpen(!isGeneroOpen);
-    // Si estamos abriendo el menú genero, cerramos los otros
-    if (!isGeneroOpen) {
-      setmenuPaletaIsOpen(false);
-      setIsPersonalizarOpen(false);
-      setIsEditarOpen(false);
-      setIsTipoCamisetaOpen(false);
-    }
-  };
-
-  const handleTipoCamisetaClick = () => {
-    setIsTipoCamisetaOpen(!isTipoCamisetaOpen);
-    // Si estamos abriendo el menú tipo de camiseta, cerramos los otros
-    if (!isTipoCamisetaOpen) {
-      setmenuPaletaIsOpen(false);
-      setIsPersonalizarOpen(false);
-      setIsGeneroOpen(false);
       setIsEditarOpen(false);
     }
   };
@@ -84,10 +53,10 @@ export const L_items = () => {
           <button className="buttons-L-items" onClick={handlePersonalizarClick}>
             <Opciones />
           </button>
-          <button className="buttons-L-items" onClick={handleGeneroClick}>
+          <button className="buttons-L-items">
             <Genero />
           </button>
-          <button className="buttons-L-items" onClick={handleTipoCamisetaClick}>
+          <button className="buttons-L-items">
             <Camiseta />
           </button>
         </div>
@@ -126,7 +95,7 @@ export const L_items = () => {
             <div id="cuadro-cuadricula"></div>
 
             <button className="opciones">Upload Design</button>
-            <button className="opciones" onClick={() => setColor("white")}>Delete Design</button>
+            <button className="opciones">Delete Design</button>
             <button className="opciones">Delete Background</button>
           </div>
         </div>
@@ -165,67 +134,8 @@ export const L_items = () => {
 
       {isPersonalizarOpen && (
         <div className="personalizar-container">
-          <h2>Velocidad de animación</h2>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            className="velocidadAnimacion"
-          />
-          <div className="gradosCamiseta">
-            <button>0°</button>
-            <button>45°</button>
-            <button>90°</button>
-            <button>135°</button>
-            <button>180°</button>
-            <button>225°</button>
-            <button>270°</button>
-            <button>315°</button>
-            <button>360°</button>
-          </div>
-          <button className="direccionAnimacion">Izquierda</button>
-          <button className="direccionAnimacion">Derecha</button>
-        </div>
-      )}
-
-      {isGeneroOpen && (
-        <div className="genero-container">
-          <h2>Genero</h2>
-          <div className="genero-container-buttons">
-            <button>
-              <GeneroFem />
-            </button>
-            <button>
-              <Genero />
-            </button>
-          </div>
-        </div>
-      )}
-
-      {isTipoCamisetaOpen && (
-        <div className="tipo-camiseta-container">
-          <h2>Tipo de camiseta</h2>
-
-          <div className="tipo-camiseta-container-buttons">
-            <button>
-              Camiseta <span>👕</span>
-            </button>
-            <button>
-              Camibuso <span>👚</span>
-            </button>
-            <button>
-              Camisa <span>👔</span>
-            </button>
-            <button>
-              Buso <span>🧥</span>
-            </button>
-            <button>
-              Saco <span>🧥</span>
-            </button>
-            <button>
-              Esqueleto <span>🦺</span>
-            </button>
-          </div>
+          <h2>Personalizar colores</h2>
+          <button>Personalizar colores</button>
         </div>
       )}
       <Scene color={color} />

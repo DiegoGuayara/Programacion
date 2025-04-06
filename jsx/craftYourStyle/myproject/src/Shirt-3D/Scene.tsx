@@ -9,8 +9,8 @@ export const Scene: React.FC<{ color?: string }> = ({ color = "white" }) => {
         camera={{ position: [0, 1.5, 5], fov: 50 }}
         style={{ background: "transparent" }}
       >
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[2, 5, 2]} intensity={1} />
+        <ambientLight intensity={1} />
+        <directionalLight position={[2, 5, 2]} intensity={2} />
         <Model color={color} />
         <OrbitControls
           enableZoom={true}
