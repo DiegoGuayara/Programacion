@@ -1,28 +1,95 @@
-.relleno-cont2{
-    position: relative;
-    height: 450px;
-    width: 100px;
-    background-color: rgb(30, 30, 30);
-    top: 120px;
-    right: 20px;
-    border-radius: 50px;
+.relleno-cont2 {
+  position: relative;
+  height: 450px;
+  width: 100px;
+  background-color: rgb(30, 30, 30);
+  top: 120px;
+  right: 20px;
+  border-radius: 50px;
 }
 
-.cont2{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    gap: 10px;
-    background-color: rgb(54, 52, 52);
-    right: 18px;
-    top: 24px;
-    width: 35px;
-    padding-left: 22px;
-    border-radius: 50px;
-    height: 400px;
-    padding-top: 10px;
+.cont2 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 10px;
+  background-color: rgb(54, 52, 52);
+  right: 21px;
+  top: 24px;
+  width: 35px;
+  padding-left: 22px;
+  border-radius: 50px;
+  height: 400px;
+  padding-top: 10px;
 }
 
-.buttons-R-items{
-    background: none;
+/* help-container */
+
+.help-container {
+  position: absolute;
+  top: 150px;
+  left: 900px;
+  background-color: rgb(30, 30, 30);
+  width: 450px;
+  height: 630px;
+  border-radius: 50px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.help-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.info-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.info-buttons button {
+  background-color: rgb(41, 46, 56);
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-size: 25px;
+}
+
+.context-bottoms p {
+  font-size: 15px;
+  color: white;
+}
+
+.info-buttons button.active {
+  background-color: rgb(65, 73, 89);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.context-bottoms {
+  margin-top: 20px;
+  margin-left: 5px;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(25, 25, 25);
+  border-radius: 5px;
+  padding-left: 10px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.info-buttons button:hover {
+  background-color: rgb(61, 70, 86);
+}
+
+.buttons-R-items {
+  background: none;
 }
