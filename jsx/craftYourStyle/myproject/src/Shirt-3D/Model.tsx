@@ -1,6 +1,6 @@
 import { useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
-import { Mesh, MeshStandardMaterial } from "three";
+import { Mesh, MeshStandardMaterial, Box3, Vector3 } from "three";
 
 export const Model: React.FC<{
   color?: string;
@@ -13,6 +13,11 @@ export const Model: React.FC<{
 
   useEffect(() => {
     if (scene) {
+      // Centrar el modelo
+      const box = new Box3().setFromObject(scene);
+      const center = box.getCenter(new Vector3());
+      scene.position.sub(center);
+
       scene.traverse((object) => {
         const mesh = object as Mesh;
         if (mesh.isMesh) {
@@ -34,16 +39,15 @@ export const Model: React.FC<{
   }, [color, scene]);
 
   useEffect(() => {
-    if (!isRotating) {
-      if (modelRef.current) {
-        modelRef.current.rotation.y = (rotation * Math.PI) / 180;
-      }
+    if (!isRotating && modelRef.current) {
+      modelRef.current.rotation.y = (rotation * Math.PI) / 180;
     }
   }, [rotation, isRotating]);
 
   useEffect(() => {
     let animationFrameId: number;
     let lastTime = 0;
+    let currentRotation = 0;
 
     const animate = (time: number) => {
       if (lastTime === 0) {
@@ -55,7 +59,8 @@ export const Model: React.FC<{
       if (isRotating && modelRef.current) {
         // Convertir la velocidad del range (0-100) a una velocidad de rotación más adecuada
         const rotationSpeed = (speed / 100) * 0.01;
-        modelRef.current.rotation.y += rotationSpeed * deltaTime;
+        currentRotation += rotationSpeed * deltaTime;
+        modelRef.current.rotation.y = currentRotation;
       }
 
       animationFrameId = requestAnimationFrame(animate);
