@@ -1,9 +1,15 @@
 import { useGLTF } from "@react-three/drei";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Mesh, MeshStandardMaterial } from "three";
 
-export const Model:React.FC<{color?:string}> = ({ color = 'white'}) => {
+export const Model: React.FC<{
+  color?: string;
+  rotation?: number;
+  speed?: number;
+  isRotating?: boolean;
+}> = ({ color = "white", rotation = 0, speed = 0, isRotating = false }) => {
   const { scene } = useGLTF("/models/scene.gltf");
+  const modelRef = useRef<any>(null);
 
   useEffect(() => {
     if (scene) {
@@ -27,5 +33,47 @@ export const Model:React.FC<{color?:string}> = ({ color = 'white'}) => {
     }
   }, [color, scene]);
 
-  return <primitive object={scene} scale={3} position={[0, -3.8, 0]} />;
+  useEffect(() => {
+    if (!isRotating) {
+      if (modelRef.current) {
+        modelRef.current.rotation.y = (rotation * Math.PI) / 180;
+      }
+    }
+  }, [rotation, isRotating]);
+
+  useEffect(() => {
+    let animationFrameId: number;
+    let lastTime = 0;
+
+    const animate = (time: number) => {
+      if (lastTime === 0) {
+        lastTime = time;
+      }
+      const deltaTime = time - lastTime;
+      lastTime = time;
+
+      if (isRotating && modelRef.current) {
+        // Convertir la velocidad del range (0-100) a una velocidad de rotación más adecuada
+        const rotationSpeed = (speed / 100) * 0.01;
+        modelRef.current.rotation.y += rotationSpeed * deltaTime;
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [isRotating, speed]);
+
+  return (
+    <primitive
+      ref={modelRef}
+      object={scene}
+      scale={3}
+      position={[0, -3.8, 0]}
+    />
+  );
 };

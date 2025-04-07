@@ -2,7 +2,12 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Model } from "./Model";
 
-export const Scene: React.FC<{ color?: string }> = ({ color = "white" }) => {
+export const Scene: React.FC<{
+  color?: string;
+  rotation?: number;
+  speed?: number;
+  isRotating?: boolean;
+}> = ({ color = "white", rotation = 0, speed = 0, isRotating = false }) => {
   return (
     <div className="sceneShirt">
       <Canvas
@@ -11,7 +16,12 @@ export const Scene: React.FC<{ color?: string }> = ({ color = "white" }) => {
       >
         <ambientLight intensity={1} />
         <directionalLight position={[2, 5, 2]} intensity={2} />
-        <Model color={color} />
+        <Model
+          color={color}
+          rotation={rotation}
+          speed={speed}
+          isRotating={isRotating}
+        />
         <OrbitControls
           enableZoom={true}
           minDistance={3}
