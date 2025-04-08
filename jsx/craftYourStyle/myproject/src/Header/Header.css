@@ -5,6 +5,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
+  overflow: hidden;
 }
 
 .titulo {
@@ -29,10 +30,24 @@ button {
 
 h2 {
   color: white;
+  display: flex;
+  gap: 5px;
+  letter-spacing: 0;
+}
+
+h2 span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+h2 span:hover {
+  transform: scale(1.2);
 }
 
 .circulo {
-  border: 3px solid grey;
+  border: 5px solid grey;
   width: 60px;
   height: 60px;
   border-radius: 50px;

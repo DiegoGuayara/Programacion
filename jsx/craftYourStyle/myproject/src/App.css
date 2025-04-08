@@ -14,9 +14,18 @@ body {
   background-color: rgb(19, 19, 19);
   background-size: 60px 60px; /* Define el tamaño de cada celda de la cuadrícula */
   background-position: top left;
+  transition: background-color 0.3s ease;
 }
 
-.App{
+body.light-mode {
+  background: linear-gradient(90deg, grey 3px, transparent 3px),
+    linear-gradient(0deg, grey 3px, transparent 3px);
+  background-color: rgb(210, 250, 255);
+  background-size: 60px 60px;
+  background-position: top left;
+}
+
+.App {
   display: flex;
   justify-content: space-between;
 }
