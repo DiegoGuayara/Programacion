@@ -105,7 +105,10 @@ export const L_items = () => {
       {menuPaletaisOpen && (
         <div className="color-picker">
           <div id="paleta-colores">
-            <h2>Background Color</h2>
+            <div className="titulo-paleta">
+              <h2>Background Color</h2>
+              <button onClick={() => setmenuPaletaIsOpen(false)}>X</button>
+            </div>
             <div className="coloresPrincipales">
               <button
                 style={{ backgroundColor: "red" }}
@@ -143,7 +146,10 @@ export const L_items = () => {
 
       {isEditarOpen && (
         <div className="editar-container">
-          <h2>Personalizacion</h2>
+          <div className="titulo-editar">
+            <h2>Personalizacion</h2>
+            <button onClick={() => setIsEditarOpen(false)}>X</button>
+          </div>
           <label className="check-label">
             <input type="checkbox" />
             Cuello

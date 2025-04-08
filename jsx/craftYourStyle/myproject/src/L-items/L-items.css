@@ -163,6 +163,10 @@
   margin-left: 24px;
 }
 
+.coloresPrincipales input {
+  cursor: pointer;
+}
+
 .editar-container input[type="checkbox"] {
   accent-color: green;
   width: 20px;
@@ -170,7 +174,45 @@
   cursor: pointer;
 }
 
+.titulo-paleta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titulo-paleta button {
+  background-color: rgb(41, 46, 56);
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.titulo-paleta button:hover {
+  background-color: rgb(61, 70, 86);
+}
+
 /* Personalizar container */
+
+.titulo-editar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titulo-editar button {
+  position: relative;
+  background-color: rgb(41, 46, 56);
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.3s ease;
+  margin-right: 40px;
+}
+
+.titulo-editar button:hover {
+  background-color: rgb(61, 70, 86);
+}
 
 .personalizar-container {
   position: absolute;
