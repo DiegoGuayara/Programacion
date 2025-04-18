@@ -62,6 +62,11 @@ export const R_Items = () => {
 
       {isHelpOpen && (
         <div className="help-container">
+
+          <div className="cont-closeButton">
+            <button onClick={() => setIsHelpOpen(false)} className="closeButton">X</button>
+          </div>
+
           <div className="info-buttons">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => (
               <button

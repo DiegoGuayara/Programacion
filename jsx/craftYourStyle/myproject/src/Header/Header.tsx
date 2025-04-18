@@ -13,11 +13,28 @@ export const Header = () => {
     <header>
       <div className="titulo">
         <div className="circulo"></div>
-        <h2>
-          <span>Craft</span>
-          <span>Your</span>
-          <span>Style</span>
-        </h2>
+        <div className="loader">
+          <h2 className="word-container group-1">
+            <span className="word">Craft</span>
+            <span className="word">Shape</span>
+            <span className="word">Build</span>
+            <span className="word">Create</span>
+          </h2>
+
+          <h2 className="word-container group-2">
+            <span className="word your">Your</span>
+            <span className="word your">Your</span>
+            <span className="word your">Your</span>
+            <span className="word your">Your</span>
+          </h2>
+
+          <h2 className="word-container group-3">
+            <span className="word">Identity</span>
+            <span className="word">Vibe</span>
+            <span className="word">Essence</span>
+            <span className="word">Image</span>
+          </h2>
+        </div>{" "}
       </div>
       <button onClick={toggleTheme}>
         <svg
