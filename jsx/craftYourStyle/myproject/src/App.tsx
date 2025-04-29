@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Header } from "./Header/Header";
 import { Shirt_Main } from "./Shirt/Shirt-Main";
@@ -34,6 +34,7 @@ export const App: React.FC = () => {
       <Header />
 
       <Routes>
+        <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/cap" element={<Cap_Main />} />
         <Route path="/shirt" element={<Shirt_Main />} />

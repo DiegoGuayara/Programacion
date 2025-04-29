@@ -32,6 +32,4 @@ body.light-mode {
   background-size: 60px 60px; /* Define el tamaño de cada celda de la cuadrícula */
   background-position: top left; /* o el que uses para Cap y Shirt */
 }
-.background-pants {
-  background-color: blue; /* o el color especial que quieras para Pants */
-}
+

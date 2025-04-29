@@ -12,6 +12,8 @@ export const Home = () => {
       <span className="word-main">Compose Your Design</span>
       <span className="word-main">Express Your Vibe</span>
       <span className="word-main">Create Youthful Design</span>
+      
+      <div className="line"></div>
     </div>
   );
 };

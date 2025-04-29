@@ -22,6 +22,7 @@
   pointer-events: none;
   transform: translateY(0);
   transition: opacity 1s ease-in-out;
+  bottom: 450px;
 }
 
 .word_carousel-main .word-main:nth-child(1) {
@@ -52,8 +53,6 @@
   animation-delay: 24s;
 }
 
-
-
 @keyframes fadeWords {
   0% {
     opacity: 0;
@@ -82,3 +81,30 @@
   }
 }
 
+.line {
+  position: absolute;
+  top: 350px;
+  width: 0;
+  height: 4px;
+  background-color: white;
+  animation: expandLine 3s ease-out forwards, changeColor 9s 3s infinite alternate;
+}
+
+@keyframes expandLine {
+  to {
+    width: 750px;
+  }
+}
+
+@keyframes changeColor {
+  0%   { background-color: #00ffff; }   /* Cian eléctrico */
+  10%  { background-color: #4169e1; }   /* Azul real */
+  20%  { background-color: #ff00ff; }   /* Magenta */
+  30%  { background-color: #ffff99; }   /* Amarillo pastel */
+  40%  { background-color: #98ff98; }   /* Verde menta */
+  50%  { background-color: #ff7f7f; }   /* Coral claro */
+  60%  { background-color: #cda4de; }   /* Violeta suave */
+  70%  { background-color: #ffa07a; }   /* Naranja luz */
+  80%  { background-color: #bbbbbb; }   /* Gris claro */
+  100% { background-color: #ffffff; }   /* Blanco */
+}
