@@ -1,0 +1,84 @@
+.word_carousel-main {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  z-index: 0;
+}
+
+.word_carousel-main .word-main {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  animation: fadeWords 27s infinite;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ccc;
+  pointer-events: none;
+  transform: translateY(0);
+  transition: opacity 1s ease-in-out;
+}
+
+.word_carousel-main .word-main:nth-child(1) {
+  animation-delay: 0s;
+}
+.word_carousel-main .word-main:nth-child(2) {
+  animation-delay: 3s;
+}
+.word_carousel-main .word-main:nth-child(3) {
+  animation-delay: 6s;
+}
+.word_carousel-main .word-main:nth-child(4) {
+  animation-delay: 9s;
+}
+.word_carousel-main .word-main:nth-child(5) {
+  animation-delay: 12s;
+}
+.word_carousel-main .word-main:nth-child(6) {
+  animation-delay: 15s;
+}
+.word_carousel-main .word-main:nth-child(7) {
+  animation-delay: 18s;
+}
+.word_carousel-main .word-main:nth-child(8) {
+  animation-delay: 21s;
+}
+.word_carousel-main .word-main:nth-child(9) {
+  animation-delay: 24s;
+}
+
+
+
+@keyframes fadeWords {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+    text-shadow: none;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 20px #fff;
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(-80px);
+    text-shadow: none;
+  }
+  40% {
+    opacity: 0;
+    transform: translateY(-80px);
+    text-shadow: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px);
+    text-shadow: none;
+  }
+}
+

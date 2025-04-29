@@ -1,4 +1,4 @@
-header {
+.header {
   position: relative;
   display: flex;
   background-color: rgb(36, 36, 36);
@@ -156,6 +156,22 @@ h2.word-container {
   border-radius: 50px;
 }
 
+.navContent{
+  display: flex;
+  justify-content: space-between;
+}
+
+.navContent > nav {
+  margin-right: 30px;
+  color: white;
+}
+
+.navContent > nav > ul{
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
 button > .sun {
   position: absolute;
   width: 30px;
@@ -163,3 +179,4 @@ button > .sun {
   bottom: 9px;
   right: 9px;
 }
+

@@ -10,11 +10,6 @@ body {
   height: 100vh;
   width: 100%;
   position: relative;
-  background: linear-gradient(90deg, #fff 1px, transparent 1px),
-    linear-gradient(0deg, #fff 1px, transparent 1px);
-  background-color: rgb(19, 19, 19);
-  background-size: 60px 60px; /* Define el tamaño de cada celda de la cuadrícula */
-  background-position: top left;
   transition: background-color 0.3s ease;
 }
 
@@ -26,7 +21,17 @@ body.light-mode {
   background-position: top left;
 }
 
-.App {
-  display: flex;
-  justify-content: space-between;
+.background-home {
+  background-color: black;
+}
+
+.background-other {
+  background: linear-gradient(90deg, #fff 1px, transparent 1px),
+    linear-gradient(0deg, #fff 1px, transparent 1px);
+  background-color: rgb(19, 19, 19);
+  background-size: 60px 60px; /* Define el tamaño de cada celda de la cuadrícula */
+  background-position: top left; /* o el que uses para Cap y Shirt */
+}
+.background-pants {
+  background-color: blue; /* o el color especial que quieras para Pants */
 }
