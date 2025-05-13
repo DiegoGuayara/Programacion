@@ -58,26 +58,36 @@
     opacity: 0;
     transform: translateY(80px);
     text-shadow: none;
+    color: white;
   }
   10% {
     opacity: 1;
     transform: translateY(0);
     text-shadow: 0 0 20px #fff;
+    color: #87CEEB;
+  }
+  20% {
+    text-shadow: 0 0 10px #fff;
+    opacity: 0;
+    color: #50C878;
   }
   30% {
     opacity: 0;
-    transform: translateY(-80px);
-    text-shadow: none;
+    transform: translateY(80px);
+    text-shadow: 0 0 5px #fff;
+    color: #FFD700;
   }
   40% {
     opacity: 0;
-    transform: translateY(-80px);
+    transform: translateY(80px);
     text-shadow: none;
+    color: #7851A9;
   }
   100% {
     opacity: 0;
-    transform: translateY(-80px);
+    transform: translateY(80px);
     text-shadow: none;
+    color: #FF7F50;
   }
 }
 
@@ -87,7 +97,8 @@
   width: 0;
   height: 4px;
   background-color: white;
-  animation: expandLine 3s ease-out forwards, changeColor 9s 3s infinite alternate;
+  animation: expandLine 3s ease-out forwards,
+    changeColor 9s 3s infinite alternate;
 }
 
 @keyframes expandLine {
@@ -97,14 +108,34 @@
 }
 
 @keyframes changeColor {
-  0%   { background-color: #00ffff; }   /* Cian eléctrico */
-  10%  { background-color: #4169e1; }   /* Azul real */
-  20%  { background-color: #ff00ff; }   /* Magenta */
-  30%  { background-color: #ffff99; }   /* Amarillo pastel */
-  40%  { background-color: #98ff98; }   /* Verde menta */
-  50%  { background-color: #ff7f7f; }   /* Coral claro */
-  60%  { background-color: #cda4de; }   /* Violeta suave */
-  70%  { background-color: #ffa07a; }   /* Naranja luz */
-  80%  { background-color: #bbbbbb; }   /* Gris claro */
-  100% { background-color: #ffffff; }   /* Blanco */
+  0% {
+    background-color: #00ffff;
+  } /* Cian eléctrico */
+  10% {
+    background-color: #4169e1;
+  } /* Azul real */
+  20% {
+    background-color: #ff00ff;
+  } /* Magenta */
+  30% {
+    background-color: #ffff99;
+  } /* Amarillo pastel */
+  40% {
+    background-color: #98ff98;
+  } /* Verde menta */
+  50% {
+    background-color: #ff7f7f;
+  } /* Coral claro */
+  60% {
+    background-color: #cda4de;
+  } /* Violeta suave */
+  70% {
+    background-color: #ffa07a;
+  } /* Naranja luz */
+  80% {
+    background-color: #bbbbbb;
+  } /* Gris claro */
+  100% {
+    background-color: #ffffff;
+  } /* Blanco */
 }

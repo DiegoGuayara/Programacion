@@ -2,7 +2,7 @@ import "./L_Items.css";
 import { Paleta } from "../../images/svg/L-Items/Paleta";
 import { Editar } from "../../images/svg/L-Items/Editar";
 import { Opciones } from "../../images/svg/L-Items/Opciones";
-import { Cap } from "../../images/svg/L-Items/Cap";
+import { Pant } from "../../images/svg/L-Items/Pant";
 import { Scene } from "../Pants-3D/Scene";
 import { useState } from "react";
 import { Size } from "../../images/svg/L-Items/Size";
@@ -198,7 +198,7 @@ export const L_items = () => {
             <Size />
           </button>
           <button className="buttons-L-items" onClick={handleTipoCamisetaClick}>
-            <Cap />
+            <Pant />
           </button>
         </div>
       </div>
@@ -264,27 +264,27 @@ export const L_items = () => {
           </div>
           <label className="check-label">
             <input type="checkbox" />
-            Color
+            Cuello
           </label>
           <label className="check-label">
             <input type="checkbox" />
-            Vicera
+            Textura
           </label>
           <label className="check-label">
             <input type="checkbox" />
-            Agregar imagenes
+            Parches
           </label>
           <label className="check-label">
             <input type="checkbox" />
-            Agregar texto
+            Ripped
           </label>
           <label className="check-label">
             <input type="checkbox" />
-            Material
+            Largo del pantalon
           </label>
           <label className="check-label">
             <input type="checkbox" />
-            Patron
+            Tipo de manga
           </label>
           <button>Personalizar colores</button>
         </div>
@@ -324,39 +324,41 @@ export const L_items = () => {
         <div className="size-container">
           <div className="titulo-size">
             <h2>Talla</h2>
-            <button className="titulo-size-button" onClick={() => setIsSizeOpen(false)}>X</button>
-          </div>
-            <button>6 7/8</button>
-            <button>7</button>
-            <button>7 1/8</button>
-            <button>7 1/4</button>
-            <button>7 3/8</button>
-            <button>7 1/2</button>
-            <button>7 5/8</button>
-            <button>7 3/4</button>
-            <button>7 7/8</button>
-            <button>8</button>
-        </div>
-      )}
-
-      {isTipoCamisetaOpen && (
-        <div className="tipo-camiseta-container">
-          <div className="titulo-tipo-camiseta">
-            <h2>Tipo de gorra</h2>
             <button
-              onClick={() => setIsTipoCamisetaOpen(false)}
-              className="titulo-tipo-camiseta-button"
+              className="titulo-size-button"
+              onClick={() => setIsSizeOpen(false)}
             >
               X
             </button>
           </div>
-          <div className="tipo-camiseta-container-buttons">
-            <button>Camionera</button>
-            <button>Drill</button>
-            <button>Sombrero</button>
-            <button>Arabe tapa cuello</button>
-            <button>Visera</button>
-            <button>Taslam</button>
+          <button>XS</button>
+          <button>S</button>
+          <button>M</button>
+          <button>L</button>
+          <button>XL</button>
+          <button>XXL</button>
+          <button>XXXL</button>
+        </div>
+      )}
+
+      {isTipoCamisetaOpen && (
+        <div className="tipo-pantalon-container">
+          <div className="titulo-tipo-pantalon">
+            <h2>Tipo de gorra</h2>
+            <button
+              onClick={() => setIsTipoCamisetaOpen(false)}
+              className="titulo-tipo-pantalon-button"
+            >
+              X
+            </button>
+          </div>
+          <div className="tipo-pantalon-container-buttons">
+            <button>Jeans</button>
+            <button>Sudareras</button>
+            <button>Pantalonetas</button>
+            <button>Shorts</button>
+            <button>Bermudas</button>
+            <button>Joggers</button>
           </div>
         </div>
       )}

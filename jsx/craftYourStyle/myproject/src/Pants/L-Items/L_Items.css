@@ -385,7 +385,6 @@
   margin-left: 20px;
   font-size: 30px;
   padding: 0;
-
 }
 
 .size-container button {
@@ -411,13 +410,13 @@
 
 /* Tipo de camiseta container */
 
-.titulo-tipo-camiseta {
+.titulo-tipo-pantalon {
   position: relative;
   display: flex;
   justify-content: space-between;
 }
 
-.titulo-tipo-camiseta .titulo-tipo-camiseta-button {
+.titulo-tipo-pantalon .titulo-tipo-pantalon-button {
   position: absolute;
   background-color: rgb(41, 46, 56);
   border-radius: 5px;
@@ -428,11 +427,11 @@
   top: 10px;
 }
 
-.titulo-tipo-camiseta button:hover {
+.titulo-tipo-pantalon button:hover {
   background-color: rgb(61, 70, 86);
 }
 
-.tipo-camiseta-container {
+.tipo-pantalon-container {
   position: absolute;
   left: 150px;
   top: 150px;
@@ -444,23 +443,23 @@
   transition: all 0.3s ease;
 }
 
-.tipo-camiseta-container:hover {
+.tipo-pantalon-container:hover {
   transform: scale(1.02);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-.tipo-camiseta-container h2 {
+.tipo-pantalon-container h2 {
   margin-left: 24px;
 }
 
-.tipo-camiseta-container-buttons {
+.tipo-pantalon-container-buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-left: 35px;
 }
 
-.tipo-camiseta-container-buttons button {
+.tipo-pantalon-container-buttons button {
   background-color: rgb(41, 46, 56);
   width: 270px;
   height: 50px;
@@ -474,12 +473,12 @@
   padding: 0 20px;
 }
 
-.tipo-camiseta-container-buttons button span {
+.tipo-pantalon-container-buttons button span {
   font-size: 30px;
   margin-left: auto;
 }
 
-.tipo-camiseta-container-buttons button:hover {
+.tipo-pantalon-container-buttons button:hover {
   background-color: rgb(61, 70, 86);
 }
 
