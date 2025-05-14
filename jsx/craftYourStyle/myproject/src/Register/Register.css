@@ -68,3 +68,13 @@
   font-size: 15px;
   color: #192f4c;
 }
+
+.linkRegister {
+  text-decoration: none;
+  color: #192f4c;
+}
+
+.linkRegister:hover {
+  text-decoration: underline;
+  color: #11243e;
+}

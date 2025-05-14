@@ -11,6 +11,7 @@ export const Register = () => {
 
   const [message, setMessage] = useState("");
 
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -81,7 +82,10 @@ export const Register = () => {
 
         <div className="footerRegister">
           <p>
-            Have an account? <Link to="/login">Login in</Link>
+            Have an account?{" "}
+            <Link to="/login" className="linkRegister">
+              Log in
+            </Link>
           </p>
         </div>
       </div>

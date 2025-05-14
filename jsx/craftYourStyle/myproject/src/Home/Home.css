@@ -58,7 +58,7 @@
     opacity: 0;
     transform: translateY(80px);
     text-shadow: none;
-    color: white;
+    color: red;
   }
   10% {
     opacity: 1;
