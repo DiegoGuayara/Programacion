@@ -7,6 +7,8 @@ import { Shirt_Main } from "./Shirt/Shirt-Main";
 import { Cap_Main } from "./Cap/Cap-Main";
 import { Pants_Main } from "./Pants/Pants-Main";
 import { Home } from "./Home/Home";
+import { Register } from "./Register/Register";
+import { Login } from "./Login/Login";
 
 export const App: React.FC = () => {
   const location = useLocation();
@@ -40,6 +42,8 @@ export const App: React.FC = () => {
         <Route path="/shirt" element={<Shirt_Main />} />
         <Route path="/pants" element={<Pants_Main />} />
         <Route path="/outfit" />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );

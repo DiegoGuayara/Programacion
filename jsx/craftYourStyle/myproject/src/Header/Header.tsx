@@ -15,21 +15,21 @@ export const Header = () => {
       <div className="titulo">
         <div className="circulo"></div>
         <div className="loader">
-          <h2 className="word-container group-1" style={{fontSize:'24px'}}>
+          <h2 className="word-container group-1" style={{ fontSize: "24px" }}>
             <span className="word">Craft</span>
             <span className="word">Shape</span>
             <span className="word">Build</span>
             <span className="word">Create</span>
           </h2>
 
-          <h2 className="word-container group-2" style={{fontSize:'24px'}}>
+          <h2 className="word-container group-2" style={{ fontSize: "24px" }}>
             <span className="word your">Your</span>
             <span className="word your">Your</span>
             <span className="word your">Your</span>
             <span className="word your">Your</span>
           </h2>
 
-          <h2 className="word-container group-3" style={{fontSize:'24px'}}>
+          <h2 className="word-container group-3" style={{ fontSize: "24px" }}>
             <span className="word">Identity</span>
             <span className="word">Vibe</span>
             <span className="word">Essence</span>
@@ -37,13 +37,15 @@ export const Header = () => {
           </h2>
         </div>{" "}
       </div>
-      
 
       <div className="navContent">
         <nav>
           <ul>
             <li style={{ listStyle: "none" }}>
-              <Link to="/Home" style={{ color: "white", textDecoration: "none" }}>
+              <Link
+                to="/Home"
+                style={{ color: "white", textDecoration: "none" }}
+              >
                 Home
               </Link>
             </li>
@@ -77,6 +79,22 @@ export const Header = () => {
                 style={{ color: "white", textDecoration: "none" }}
               >
                 OutFit
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/register"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                Register
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/login"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                Login
               </Link>
             </li>
           </ul>
