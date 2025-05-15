@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
 
@@ -6,6 +6,8 @@ export const Login = () => {
   // 🧠 1. Estados arriba
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
 
   // 🛠️ 2. Funciones debajo
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,6 +32,10 @@ export const Login = () => {
       if (response.ok) {
         setFormData({ email: "", password: "" });
         // redirección si quieres
+
+        setTimeout(() => {
+          navigate("/Home")
+        }, 3000);
       }
     } catch (error) {
       console.error("Login error:", error);

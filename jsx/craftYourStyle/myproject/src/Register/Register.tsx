@@ -1,6 +1,6 @@
 import "./Register.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Register = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ export const Register = () => {
 
   const [message, setMessage] = useState("");
 
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -34,6 +35,10 @@ export const Register = () => {
 
       if (response.ok) {
         setFormData({ name: "", email: "", password: "" });
+
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
       }
     } catch (error) {
       console.error("Error al registrarse:", error);

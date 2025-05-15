@@ -22,7 +22,7 @@
   pointer-events: none;
   transform: translateY(0);
   transition: opacity 1s ease-in-out;
-  bottom: 450px;
+  top: 30%;
 }
 
 .word_carousel-main .word-main:nth-child(1) {
@@ -93,7 +93,7 @@
 
 .line {
   position: absolute;
-  top: 350px;
+  top: 50%;
   width: 0;
   height: 4px;
   background-color: white;
