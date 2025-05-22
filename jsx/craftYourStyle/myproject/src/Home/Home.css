@@ -66,6 +66,9 @@
     text-shadow: 0 0 20px #fff;
     color: #87CEEB;
   }
+  15% {
+    opacity: 0;
+  }
   20% {
     text-shadow: 0 0 10px #fff;
     opacity: 0;
