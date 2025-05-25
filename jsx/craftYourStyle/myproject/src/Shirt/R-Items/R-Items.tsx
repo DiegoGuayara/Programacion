@@ -7,9 +7,11 @@ import { Share } from "../../images/svg/R-Items/Share";
 import { Cancel } from "../../images/svg/R-Items/Cancel";
 import { Help } from "../../images/svg/R-Items/Help";
 import { useState } from "react";
+import convertirModel from "./convertirModelo";
 
 export const R_Items = () => {
   const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [isDownloadOpen, setIsDownloadOpen] = useState(false);
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
   const infoTexts = {
@@ -26,6 +28,10 @@ export const R_Items = () => {
 
   const handleHelpClick = () => {
     setIsHelpOpen(!isHelpOpen);
+  };
+
+  const handleDownloadClick = () => {
+    setIsDownloadOpen(!isDownloadOpen);
   };
 
   const handleInfoButtonClick = (buttonIndex: number) => {
@@ -45,7 +51,7 @@ export const R_Items = () => {
           <button className="buttons-R-items">
             <Save />
           </button>
-          <button className="buttons-R-items">
+          <button className="buttons-R-items" onClick={handleDownloadClick}>
             <Download />
           </button>
           <button className="buttons-R-items">
@@ -59,6 +65,23 @@ export const R_Items = () => {
           </button>
         </div>
       </div>
+
+      {isDownloadOpen && (
+        <div className="download-container">
+          <div className="cont-closeButton">
+            <button
+              onClick={() => {
+                setIsDownloadOpen(false);
+                
+              }}
+              className="closeButton"
+            >
+              X
+            </button>
+          </div>
+          <button onClick={convertirModel}>Descargar el modelo 3D</button>
+        </div>
+      )}
 
       {isHelpOpen && (
         <div className="help-container">
